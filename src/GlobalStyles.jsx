@@ -92,11 +92,11 @@ const GlobalStyles = createGlobalStyle`
     align-items: center;
     justify-content: center;
     gap: 0.5rem; 
-     color: var(--text-dark); margin-bottom: 10px;
+    color: var(--text-dark); margin-bottom: 10px;
 }
  .secondary-title {
     font-size: var(--secondary-title-font);
-     color: var(--text-dark); margin-bottom: 10px;
+    color: var(--text-dark); margin-bottom: 10px;
 
 }
 

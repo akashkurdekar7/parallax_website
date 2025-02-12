@@ -6,6 +6,7 @@ import GlobalStyles from "./GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import About from "./components/About";
 import Services from "./components/Services";
+import Features from "./components/Features";
 
 const theme = {
   primaryColor: "#E84545",
@@ -26,6 +27,7 @@ const App = () => {
           <HeroSection />
           <About />
           <Services />
+          <Features />
         </main>
         <Footer />
       </>

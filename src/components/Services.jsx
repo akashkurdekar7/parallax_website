@@ -107,8 +107,8 @@ const Services = () => {
 };
 
 const Wrapper = styled.section`
-  height: 800px;
-  padding: 3rem 2rem;
+  height: auto;
+  padding: 4rem 2rem;
 
   .secondary-title {
     text-align: center;
@@ -134,7 +134,7 @@ const Box = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2.5rem;
   padding: 1rem 1.5rem;
   /* border: 1px solid rgba(0, 0, 0, 0.1); */
   /* border-radius: 5px; */
