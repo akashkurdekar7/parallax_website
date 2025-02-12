@@ -60,11 +60,6 @@ const Subscribe = styled.div`
     left: 0;
     transform: translateX(50%);
   }
-  .title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
 
   .sub-title {
     font-size: 1.2rem;
@@ -101,10 +96,6 @@ const Subscribe = styled.div`
   }
 
   @media (max-width: 768px) {
-    .title {
-      font-size: 1.5rem;
-    }
-
     .sub-title {
       font-size: 1rem;
     }
@@ -145,7 +136,7 @@ const Banner = styled.div`
     transition: all 0.3s ease;
     &:hover {
       filter: grayscale(0%);
-      transform: scale(110%);
+      transform: scale(1.1);
     }
   }
 `;

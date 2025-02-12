@@ -4,8 +4,8 @@ import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import GlobalStyles from "./GlobalStyles";
 import { ThemeProvider } from "styled-components";
-import styled from "styled-components";
 import About from "./components/About";
+import Services from "./components/Services";
 
 const theme = {
   primaryColor: "#E84545",
@@ -25,6 +25,7 @@ const App = () => {
         <main>
           <HeroSection />
           <About />
+          <Services />
         </main>
         <Footer />
       </>
