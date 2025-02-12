@@ -2,42 +2,64 @@ import React from "react";
 import styled from "styled-components";
 import heroBg from "../assets/Images/hero-bg.jpg";
 
+import client1 from "../assets/clients/client-1.png";
+import client2 from "../assets/clients/client-2.png";
+import client3 from "../assets/clients/client-3.png";
+import client4 from "../assets/clients/client-4.png";
+import client5 from "../assets/clients/client-5.png";
+
 const HeroSection = () => {
   return (
     <Wrapper>
-      <div className="greet">
-        <h3 className="title">Welcome to our website</h3>
-        <p className="sub-title">
-          We are a team of talented designers making websites.
-        </p>
-        <div className="subscribe">
-          <input type="email" placeholder="Enter your email" />
-          <button>Subscribe</button>
+      <Subscribe>
+        <div className="con">
+          <h3 className="title">Welcome to our website</h3>
+          <p className="sub-title">
+            We are a team of talented designers making websites.
+          </p>
+          <div className="subscribe">
+            <input type="email" placeholder="Enter your email" />
+            <button>Subscribe</button>
+          </div>
         </div>
-      </div>
+      </Subscribe>
+      <Banner>
+        {[client1, client2, client3, client4, client5].map((client, index) => (
+          <div key={index} className="banner-images">
+            <img src={client} alt="clients" />
+          </div>
+        ))}
+      </Banner>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   background-image: url(${heroBg});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr 0.4fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Subscribe"
+    "Banner";
   text-align: center;
-
-  .greet {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 2rem;
-    border-radius: 10px;
+`;
+const Subscribe = styled.div`
+  grid-area: Subscribe;
+  display: flex;
+  position: relative;
+  .con {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateX(50%);
   }
-
   .title {
     font-size: 2rem;
     font-weight: bold;
@@ -97,6 +119,33 @@ const Wrapper = styled.div`
 
     button {
       width: 100%;
+    }
+  }
+`;
+
+const Banner = styled.div`
+  grid-area: Banner;
+  background-color: ${({ theme }) => theme.backgroundLight};
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+
+  .banner-images {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+    &:hover {
+      filter: grayscale(0%);
+      transform: scale(110%);
     }
   }
 `;

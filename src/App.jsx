@@ -5,14 +5,15 @@ import HeroSection from "./components/HeroSection";
 import GlobalStyles from "./GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import styled from "styled-components";
+import About from "./components/About";
 
 const theme = {
   primaryColor: "#E84545",
   secondaryColor: "#FF9292",
   textLight: "#ffffff",
   textDark: "#000000",
-  backgroundDark: "#000000",
-  backgroundLight: "#ffffff",
+  backgroundDark: "#141414",
+  backgroundLight: "#f1f1f1",
 };
 
 const App = () => {
@@ -21,7 +22,10 @@ const App = () => {
       <GlobalStyles />
       <>
         <Header />
-        <main>{/* <HeroSection /> */}</main>
+        <main>
+          <HeroSection />
+          <About />
+        </main>
         <Footer />
       </>
     </ThemeProvider>

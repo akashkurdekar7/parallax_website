@@ -20,38 +20,39 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    background-color: var(--background-light);
+    background-color: var(--background-dark);  /* Updated for consistency */
     color: var(--text-light);
     transition: all 0.3s ease-in-out;
+    height: 2700px;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     margin-bottom: 10px;
   }
 
   h1 {
     font-size: 3rem;
-    color: var(--primary-color);
   }
 
   h2 {
     font-size: 2.5rem;
   }
 
+  ul, li, dl, a {
+    text-decoration: none;
+    list-style: none;
+  }
+
   a {
     text-decoration: none;
-    color: var(--primary-color);
-    transition: color 0.3s ease-in-out;
+    transition: color 0.2s ease-in-out;
   }
 
-  a:hover {
-    color: var(--secondary-color);
-  }
+  
 
   button {
-    padding: 0.75em 1.5em;
+    padding: 0.5rem 1.5em;
     font-size: 1em;
     font-weight: 600;
     border: none;
@@ -59,15 +60,15 @@ const GlobalStyles = createGlobalStyle`
     cursor: pointer;
     background-color: var(--primary-color);
     color: var(--text-light);
-    transition: all 0.3s ease-in-out;
-  }
+    transition: background-color 0.3s linear, border 0.3s ease;
 
-  button:hover {
-    background-color: var(--secondary-color);
+    &:hover {
+      background-color: var(--secondary-color);
+      border: 1px ridge var(--primary-color);
+    }
   }
 
   section {
-    padding: 80px 20px;
     text-align: center;
   }
 
