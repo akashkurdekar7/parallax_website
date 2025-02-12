@@ -1,0 +1,183 @@
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBars,
+  faChevronDown,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
+
+const Navbar = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(false);
+
+  return (
+    <Wrapper>
+      <div className="logo">
+        <Link to="/">
+          <h1>Logo</h1>
+        </Link>
+      </div>
+
+      <MenuButton onClick={() => setOpenMenu(!openMenu)}>
+        <FontAwesomeIcon icon={openMenu ? faTimes : faBars} />
+      </MenuButton>
+
+      <Nav className={openMenu ? "open" : ""}>
+        <ul>
+          {[
+            "Home",
+            "About",
+            "Services",
+            "Portfolio",
+            "Pricing",
+            "Team",
+            "Blog",
+            "Contact",
+          ].map((item) => (
+            <li key={item}>
+              <Link
+                onClick={() => setOpenMenu(false)}
+                to={`/${item.toLowerCase()}`}
+              >
+                {item}
+              </Link>
+            </li>
+          ))}
+          <li className="dropdown">
+            <DropdownToggle onClick={() => setOpenDropdown(!openDropdown)}>
+              Dropdown <FontAwesomeIcon icon={faChevronDown} />
+            </DropdownToggle>
+            <DropdownMenu className={openDropdown ? "show" : ""}>
+              {["Option 1", "Option 2"].map((option, index) => (
+                <li key={index}>
+                  <Link
+                    to={`/option${index + 1}`}
+                    onClick={() => {
+                      setOpenMenu(false);
+                      setOpenDropdown(false);
+                    }}
+                  >
+                    {option}
+                  </Link>
+                </li>
+              ))}
+            </DropdownMenu>
+          </li>
+        </ul>
+      </Nav>
+
+      <div className="btn">
+        <button>Get Started</button>
+      </div>
+    </Wrapper>
+  );
+};
+
+const Wrapper = styled.nav`
+  background-color: ${({ theme }) => theme.backgroundLight};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+
+  .logo h1 {
+    color: ${({ theme }) => theme.primaryColor};
+    &:hover {
+      color: ${({ theme }) => theme.secondaryColor};
+    }
+  }
+  .btn button {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .btn {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .btn button {
+      display: block;
+    }
+  }
+`;
+
+const MenuButton = styled.button`
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: ${({ theme }) => theme.primaryColor};
+  cursor: pointer;
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const Nav = styled.nav`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: ${({ theme }) => theme.backgroundLight};
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+
+  &.open {
+    display: flex;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  a {
+    color: ${({ theme }) => theme.primaryColor};
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  @media (min-width: 768px) {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    background: none;
+    ul {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+`;
+
+const DropdownToggle = styled.span`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.primaryColor};
+`;
+
+const DropdownMenu = styled.ul`
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  background: ${({ theme }) => theme.backgroundLight};
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  border-radius: 5px;
+`;
+
+export default Navbar;
