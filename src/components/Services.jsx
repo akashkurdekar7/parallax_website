@@ -108,6 +108,7 @@ const List = styled.div`
 
 const Box = styled.div`
   display: flex;
+  position: relative;
   align-items: center;
   gap: 1.5rem;
   padding: 1.5rem;
