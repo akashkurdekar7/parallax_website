@@ -3,7 +3,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import GlobalStyles from "./GlobalStyles";
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import About from "./components/About";
 import Services from "./components/Services";
 import Features from "./components/Features";
@@ -13,6 +13,8 @@ import Team from "./components/Team";
 import Blog from "./components/Blog";
 import CallBanner from "./components/CallBanner";
 import Contact from "./components/Contact";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 const theme = {
   primaryColor: "#E84545",
@@ -24,12 +26,18 @@ const theme = {
 };
 
 const App = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <>
         <Header />
         <main>
+          <Navigator onClick={scrollToTop}>
+            <FontAwesomeIcon className="icon" icon={faArrowUp} />
+          </Navigator>
           <HeroSection />
           <About />
           <Services />
@@ -47,4 +55,23 @@ const App = () => {
   );
 };
 
+const Navigator = styled.div`
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background-color: ${({ theme }) => theme.primaryColor};
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  .icon {
+    font-size: 2rem;
+    color: white;
+  }
+`;
 export default App;

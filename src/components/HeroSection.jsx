@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import heroBg from "../assets/Images/hero-bg.jpg";
-
+// client images
 import client1 from "../assets/clients/client-1.png";
 import client2 from "../assets/clients/client-2.png";
 import client3 from "../assets/clients/client-3.png";
@@ -133,6 +133,7 @@ const Banner = styled.div`
 
   .banner-images {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 2rem;
     flex-wrap: wrap;
