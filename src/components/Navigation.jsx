@@ -82,7 +82,7 @@ const Wrapper = styled.nav`
   z-index: 1000;
 
   .logo {
-    font-family: "Rocktown", sans-serif;
+    font-family: "Rock Salt", serif;font-family: "Rock Salt", serif;
     color: ${({ theme }) => theme.primaryColor};
     font-size: 2.5rem;
     margin: 0;

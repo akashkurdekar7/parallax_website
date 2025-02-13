@@ -96,10 +96,12 @@ const Wrapper = styled.footer`
     flex-direction: column;
   }
   .logo {
-    font-family: "Rocktown", sans-serif;
+    font-family: "Rock Salt", serif;
     letter-spacing: 1px;
     font-size: 24px;
-    font-weight: bold;
+
+    font-weight: 400;
+    font-style: normal;
   }
   .title {
     font-size: 18px;
