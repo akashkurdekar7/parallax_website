@@ -201,9 +201,18 @@ const Testimonials = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    gap: 2rem;
     padding: 2rem;
     .intro {
       max-width: 100%;
+      text-align: center;
+      h2 {
+        text-align: center;
+      }
+      p {
+        width: 100%;
+        text-align: justify;
+      }
     }
   }
 `;
