@@ -108,6 +108,11 @@ const Wrapper = styled.section`
   @media (max-width: 768px) {
     gap: 2rem;
     grid-template-rows: none;
+    padding: 0;
+  }
+  @media (min-width: 786px) {
+    grid-template-rows: none;
+    gap: 2rem;
   }
 `;
 const Info = styled.div`
@@ -140,6 +145,13 @@ const Info = styled.div`
     gap: 20px;
   }
 
+  @media (min-width: 786px) {
+    grid-template-rows: none;
+    gap: 1rem;
+    .info {
+      justify-content: flex-start;
+    }
+  }
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
@@ -154,7 +166,7 @@ const Info = styled.div`
     }
 
     .tiles {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
     .subtitle {
