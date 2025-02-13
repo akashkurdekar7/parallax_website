@@ -447,6 +447,10 @@ const FAQ = styled.div`
   display: flex;
   gap: 2rem;
   justify-content: space-evenly;
+
+  @media (max-width: 786px) {
+    flex-direction: column;
+  }
   .content {
     text-align: center;
     max-width: 400px;

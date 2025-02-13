@@ -64,16 +64,6 @@ const CallBanner = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
-    // responsive: [
-    //   {
-    //     breakpoint: 1024,
-    //     settings: { slidesToShow: 2, slidesToScroll: 1 },
-    //   },
-    //   {
-    //     breakpoint: 768,
-    //     settings: { slidesToShow: 1, slidesToScroll: 1 },
-    //   },
-    // ],
   };
 
   return (
@@ -151,15 +141,12 @@ const Wrapper = styled.div`
     padding: 2rem 5rem;
     gap: 1.5rem;
   }
-  @media (max-width: 768px) {
-    .CTA {
-      padding: 2rem;
-    }
-  }
+
   h2 {
     text-transform: capitalize;
     margin: 0;
   }
+
   p {
     margin: 0;
     text-align: center;
@@ -174,14 +161,27 @@ const Wrapper = styled.div`
     cursor: pointer;
     border-radius: 5px;
   }
+
+  @media (max-width: 1024px) {
+    .CTA {
+      padding: 2rem 4rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .CTA {
+      padding: 2rem;
+    }
+  }
 `;
+
 const Testimonials = styled.div`
   margin-top: 50px;
   display: flex;
   padding: 2rem 10rem;
+
   .intro {
     max-width: 50%;
-
     h2 {
       text-align: left;
       font-size: 2.5rem;
@@ -189,6 +189,21 @@ const Testimonials = styled.div`
     p {
       font-size: 0.8rem;
       text-align: justify;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 2rem 5rem;
+    .intro {
+      max-width: 60%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 2rem;
+    .intro {
+      max-width: 100%;
     }
   }
 `;
@@ -265,9 +280,20 @@ const Carousel = styled.div`
     margin: 0 5px;
     font-size: 2rem;
   }
+
   .desc {
     text-align: justify;
     font-size: 1.5rem;
   }
+
+  @media (max-width: 1024px) {
+    width: 60%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 1rem;
+  }
 `;
+
 export default CallBanner;
