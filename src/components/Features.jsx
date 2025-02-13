@@ -56,14 +56,14 @@ const Wrapper = styled.section`
 const Feature = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10rem;
+  gap: 6rem;
   padding: 2rem 1rem;
 
   .box {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 5rem;
+    gap: 3rem;
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
@@ -71,22 +71,24 @@ const Feature = styled.div`
 
   .image {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;
     position: relative;
 
     .first {
-      top: 15%;
+      top: 10%;
       position: absolute;
-      right: 20%;
+      right: 15%;
       z-index: 2;
     }
 
     img {
       width: 100%;
-      max-width: 500px;
+      max-width: 400px;
       height: auto;
       object-fit: cover;
-      border: 5px solid ${({ theme }) => theme.textLight};
+      border: 4px solid ${({ theme }) => theme.textLight};
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
   }
@@ -97,7 +99,7 @@ const Feature = styled.div`
     max-width: 500px;
 
     h3 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       margin-bottom: 1rem;
     }
 
@@ -124,17 +126,54 @@ const Feature = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     .box {
       flex-direction: column;
       text-align: center;
+      gap: 2rem;
+    }
 
-      .content {
-        text-align: center;
+    .content {
+      text-align: center;
+    }
+
+    .image {
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        max-width: 300px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+    .box {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .box:nth-child(2) {
+      flex-direction: column-reverse;
+    }
+
+    .content {
+      text-align: center;
+    }
+
+    .image {
+      flex-direction: column;
+      align-items: center;
+
+      .first {
+        position: static;
+      }
+      .second {
+        display: none;
       }
 
-      .image {
-        justify-content: center;
+      img {
+        max-width: 280px;
       }
     }
   }

@@ -90,7 +90,11 @@ button {
 
   section {
     height: 100vh;
-    padding: 2rem 15rem;
+  }
+
+  .heading{
+    text-transform: capitalize;
+    font-size:2rem;
   }
 
   @media (max-width: 768px) {

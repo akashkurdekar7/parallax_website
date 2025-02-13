@@ -54,7 +54,7 @@ const Contact = () => {
             <input type="email" placeholder="Your Email" required />
           </div>
           <input type="text" placeholder="Subject" required />
-          <textarea placeholder="Message" required></textarea>
+          <textarea rows={5} placeholder="Message" required></textarea>
           <button type="submit">Send Message</button>
         </ContactForm>
       </div>
@@ -66,16 +66,25 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  height: auto;
 
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
+
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr;
+      place-items: center;
+    }
   }
 `;
 
@@ -123,6 +132,11 @@ const ContactForm = styled.div`
     margin-bottom: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+  }
+  textarea {
+    resize: vertical;
+    min-height: 169px;
+    max-height: 300px;
   }
 
   button {

@@ -15,7 +15,7 @@ const About = () => {
     <Wrapper id="about">
       <Info>
         <div className="info">
-          <h2 className="title">about us</h2>
+          <h2 className="heading">about us</h2>
           <h3 className="subtitle">Lorem ipsum dolor sit amet.</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
@@ -122,7 +122,9 @@ const Info = styled.div`
     /* margin-top: 10rem; */
     justify-content: center;
   }
-
+  .subtitle {
+    text-align: left;
+  }
   .tiles {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -168,58 +170,57 @@ const Tile = styled.div`
 `;
 
 const Banner = styled.div`
+  position: relative;
+  width: 100%;
   height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+
   .bgc {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    filter: opacity(50);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url(${statsBanner});
+    background: url(${statsBanner}) center/cover no-repeat;
+  }
 
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-    }
+  .bgc::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
   }
 
   .stats {
-    z-index: 5;
+    position: relative;
+    z-index: 2;
     display: flex;
-    flex-direction: row;
-    align-content: center;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    gap: 10rem;
+    max-width: 1200px;
+    gap: 3rem;
     text-align: center;
     color: ${({ theme }) => theme.textLight};
   }
+
   .box {
     display: flex;
-    width: max-content;
     flex-direction: column;
-    align-content: center;
-    justify-content: center;
     align-items: center;
     transition: transform 0.3s ease;
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
   }
+
   p {
     font-size: 2.5rem;
     font-weight: 700;
@@ -230,6 +231,18 @@ const Banner = styled.div`
     font-size: 1.2rem;
     font-weight: 500;
   }
+
+  @media (max-width: 768px) {
+    .stats {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .box {
+      width: 100%;
+    }
+  }
 `;
+
 
 export default About;

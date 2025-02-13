@@ -13,7 +13,7 @@ const HeroSection = () => {
     <Wrapper id="home">
       <Subscribe>
         <div className="con">
-          <h3 className="title">Welcome to our website</h3>
+          <h3 className="heading">Welcome to our website</h3>
           <p className="sub-title">
             We are a team of talented designers making websites.
           </p>
@@ -119,7 +119,10 @@ const Banner = styled.div`
   background-color: ${({ theme }) => theme.backgroundLight};
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
+  width: calc(100% + 30rem);
+  margin-left: -15rem;
+  margin-right: -15rem;
+  margin-bottom: -2rem;
 
   .banner-images {
     display: flex;
@@ -137,6 +140,16 @@ const Banner = styled.div`
     &:hover {
       filter: grayscale(0%);
       transform: scale(1.1);
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; /* Remove extra width adjustments for smaller screens */
+    margin-left: 0;
+    margin-right: 0;
+    .banner-images {
+      flex-wrap: wrap;
+      justify-content: center;
     }
   }
 `;
