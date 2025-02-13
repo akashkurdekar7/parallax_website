@@ -59,8 +59,8 @@ const Navigator = styled.div`
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,7 +70,7 @@ const Navigator = styled.div`
   padding: 10px;
   cursor: pointer;
   .icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
   }
 `;

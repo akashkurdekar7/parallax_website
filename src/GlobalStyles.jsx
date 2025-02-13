@@ -44,6 +44,22 @@ const GlobalStyles = createGlobalStyle`
     font-size: 2.5rem;
   }
 
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.75rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+  }
+
+  h6 {
+    font-size: 1.25rem;
+  }
+
   ul, li, dl {
     list-style: none;
   }
@@ -58,7 +74,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
-button {
+  button {
     padding: 0.5rem 1.5rem;
     font-size: 14px;
     font-weight: 500;
@@ -85,22 +101,52 @@ button {
         transform: translateY(1px);
         box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
     }
-}
-
+  }
 
   section {
     height: 100vh;
   }
 
-  .heading{
+  .heading {
     text-transform: capitalize;
-    font-size:2rem;
+    font-size: 2rem;
+  }
+
+  @media (max-width: 1200px) {
+    h1 { font-size: 2.75rem; }
+    h2 { font-size: 2.2rem; }
+    h3 { font-size: 1.85rem; }
+    h4 { font-size: 1.6rem; }
+    h5 { font-size: 1.4rem; }
+    h6 { font-size: 1.15rem; }
+  }
+
+  @media (max-width: 1024px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.7rem; }
+    h4 { font-size: 1.5rem; }
+    h5 { font-size: 1.3rem; }
+    h6 { font-size: 1.1rem; }
   }
 
   @media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.9rem; }
+    h3 { font-size: 1.6rem; }
+    h4 { font-size: 1.4rem; }
+    h5 { font-size: 1.2rem; }
+    h6 { font-size: 1rem; }
     section { padding: 60px 15px; }
+  }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.7rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.3rem; }
+    h5 { font-size: 1.1rem; }
+    h6 { font-size: 0.9rem; }
   }
 
   .title {
@@ -138,7 +184,7 @@ button {
     height: auto;
   }
 
-  .icon{
+  .icon {
     cursor: pointer;
     transition: all .3s ease-in-out;
   }
