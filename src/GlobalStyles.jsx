@@ -175,7 +175,7 @@ const GlobalStyles = createGlobalStyle`
   .title::after {
     content: "";
     display: block;
-    width: 10%;
+    width: 5%;
     height: 2px;
     background-color: var(--primary-color);
   }
