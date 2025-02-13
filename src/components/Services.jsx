@@ -10,93 +10,74 @@ import {
   faSun,
 } from "@fortawesome/free-solid-svg-icons";
 
+const servicesData = [
+  {
+    id: 1,
+    icon: faBriefcase,
+    title: "Business Solutions",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id: 2,
+    icon: faClipboardList,
+    title: "Project Management",
+    description:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  },
+  {
+    id: 3,
+    icon: faChartBar,
+    title: "Data Analytics",
+    description:
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  },
+  {
+    id: 4,
+    icon: faBinoculars,
+    title: "Market Research",
+    description:
+      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  },
+  {
+    id: 5,
+    icon: faSun,
+    title: "Creative Solutions",
+    description:
+      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+  },
+  {
+    id: 6,
+    icon: faCalendarAlt,
+    title: "Event Planning",
+    description:
+      "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+  },
+];
+
 const Services = () => {
   return (
     <Wrapper id="services">
       <h1 className="title">Services</h1>
       <p className="subtitle">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, harum!
+        Discover our range of professional services tailored to your needs.
       </p>
-
       <List>
-        <Box>
-          <div className="icon-box">
-            <FontAwesomeIcon className="icon" icon={faBriefcase} />
-          </div>
-          <div className="content">
-            <h4>Lorem, ipsum.</h4>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
-              optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
-              aut.
-            </p>
-          </div>
-        </Box>
-        <Box>
-          <div className="icon-box">
-            <FontAwesomeIcon className="icon" icon={faClipboardList} />
-          </div>
-          <div className="content">
-            <h4>Lorem, ipsum.</h4>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
-              optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
-              aut.
-            </p>
-          </div>
-        </Box>
-        <Box>
-          <div className="icon-box">
-            <FontAwesomeIcon className="icon" icon={faChartBar} />
-          </div>
-          <div className="content">
-            <h4>Lorem, ipsum.</h4>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
-              optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
-              aut.
-            </p>
-          </div>
-        </Box>
-        <Box>
-          <div className="icon-box">
-            <FontAwesomeIcon className="icon" icon={faBinoculars} />
-          </div>
-          <div className="content">
-            <h4>Lorem, ipsum.</h4>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
-              optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
-              aut.
-            </p>
-          </div>
-        </Box>
-        <Box>
-          <div className="icon-box">
-            <FontAwesomeIcon className="icon" icon={faSun} />
-          </div>
-          <div className="content">
-            <h4>Lorem, ipsum.</h4>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
-              optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
-              aut.
-            </p>
-          </div>
-        </Box>
-        <Box>
-          <div className="icon-box">
-            <FontAwesomeIcon className="icon" icon={faCalendarAlt} />
-          </div>
-          <div className="content">
-            <h4>Lorem, ipsum.</h4>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
-              optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
-              aut.
-            </p>
-          </div>
-        </Box>
+        {servicesData.map(({ id, icon, title, description }) => (
+          <Box key={id}>
+            <div className="icon-box">
+              <FontAwesomeIcon
+                className="icon"
+                icon={icon}
+                aria-label={title}
+              />
+            </div>
+            <div className="content">
+              <h4>{title}</h4>
+              <p>{description}</p>
+            </div>
+          </Box>
+        ))}
       </List>
     </Wrapper>
   );
@@ -105,38 +86,35 @@ const Services = () => {
 const Wrapper = styled.section`
   height: auto;
   padding: 4rem 2rem;
+  text-align: center;
 
   .subtitle {
-    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2rem;
   }
 `;
 
 const List = styled.div`
-  padding: 1rem 10rem;
-  gap: 2rem;
   display: grid;
+  width: 80%;
+  place-self: center;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 10px 10px;
-  grid-template-areas:
-    "a b"
-    "c d"
-    "e f";
+  gap: 1.5rem;
 
-  .box1,
-  .box2 {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 `;
 
 const Box = styled.div`
-  position: relative;
   display: flex;
   align-items: center;
-  gap: 2.5rem;
-  padding: 1rem 1.5rem;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
 
   &::after {
     content: "";
@@ -158,23 +136,8 @@ const Box = styled.div`
     background-color: ${({ theme }) => theme.backgroundDark};
   }
 
-  &:nth-child(1) {
-    grid-area: a;
-  }
-  &:nth-child(2) {
-    grid-area: b;
-  }
-  &:nth-child(3) {
-    grid-area: c;
-  }
-  &:nth-child(4) {
-    grid-area: d;
-  }
-  &:nth-child(5) {
-    grid-area: e;
-  }
-  &:nth-child(6) {
-    grid-area: f;
+  &:hover {
+    transform: scale(1.05);
   }
 
   .icon-box {
@@ -192,23 +155,32 @@ const Box = styled.div`
       z-index: 2;
     }
   }
+
   .icon {
     width: 50px;
     height: 50px;
-    position: relative;
-    z-index: 1;
   }
+
   .content {
     text-align: left;
   }
+
   .content h4 {
     margin: 0;
+    font-size: 1.2rem;
   }
 
   .content p {
     margin: 0;
+    font-size: 0.9rem;
     text-align: justify;
-    font-size: 14px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    gap: 1rem;
   }
 `;
 
