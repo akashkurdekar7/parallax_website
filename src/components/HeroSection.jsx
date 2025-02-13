@@ -49,7 +49,13 @@ const Wrapper = styled.section`
     "Subscribe"
     "Banner";
   text-align: center;
+
+  @media (max-width: 768px) {
+    background-position: top;
+    padding: 0;
+  }
 `;
+
 const Subscribe = styled.div`
   grid-area: Subscribe;
   display: flex;
@@ -57,13 +63,16 @@ const Subscribe = styled.div`
   .con {
     position: absolute;
     top: 50%;
-    left: 0;
-    transform: translateX(50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    padding: 0 1rem;
   }
 
   .sub-title {
     font-size: 1.2rem;
     margin-bottom: 1rem;
+    color: #fff;
   }
 
   .subscribe {
@@ -119,11 +128,15 @@ const Banner = styled.div`
   background-color: ${({ theme }) => theme.backgroundLight};
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
 
   .banner-images {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   img {
@@ -133,6 +146,7 @@ const Banner = styled.div`
     cursor: pointer;
     filter: grayscale(100%);
     transition: all 0.3s ease;
+
     &:hover {
       filter: grayscale(0%);
       transform: scale(1.1);
@@ -140,12 +154,23 @@ const Banner = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 100%; /* Remove extra width adjustments for smaller screens */
-    margin-left: 0;
-    margin-right: 0;
     .banner-images {
-      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 1rem;
+    }
+
+    img {
+      width: 80px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .banner-images {
       justify-content: center;
+    }
+
+    img {
+      width: 70px;
     }
   }
 `;
