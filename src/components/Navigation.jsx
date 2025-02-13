@@ -74,9 +74,11 @@ const Wrapper = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: ${({ scrolling, theme }) =>
-    scrolling ? theme.textLight : "transparent"};
-  transition: background-color 0.3s ease-in-out;
+  background-color: ${({ scrolling }) =>
+    scrolling ? "rgba(255, 255, 255, 0.7)" : "transparent"};
+  backdrop-filter: ${({ scrolling }) =>
+    scrolling ? "blur(10px)" : "blur(0px)"};
+  transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease;
   z-index: 1000;
 
   .logo {
@@ -87,7 +89,8 @@ const Wrapper = styled.nav`
 
   .menu-icon {
     font-size: 2rem;
-    color: ${({ scrolling }) => (scrolling ? "black" : "white")};
+    color: ${({ scrolling, theme }) =>
+      scrolling ? theme.textDark : theme.textLight};
     cursor: pointer;
     display: none;
   }

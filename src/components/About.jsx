@@ -174,6 +174,7 @@ const Wrapper = styled.section`
   grid-template-rows: 3fr 0.4fr;
   height: auto;
   scroll-margin-top: 80px;
+ 
 
   @media (max-width: 768px) {
     gap: 2rem;

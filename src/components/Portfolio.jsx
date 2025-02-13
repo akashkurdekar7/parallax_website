@@ -108,7 +108,7 @@ const Portfolio = () => {
 
 const Wrapper = styled.section`
   text-align: center;
-  padding: 2rem;
+  padding: 4rem 2rem;
   height: auto;
 
   @media (max-width: 768px) {

@@ -66,6 +66,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding: 4rem 2rem;
   height: auto;
 
   .container {

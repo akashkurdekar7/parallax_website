@@ -80,6 +80,7 @@ const Team = () => {
 
 const Wrapper = styled.section`
   height: auto;
+  padding: 4rem 2rem;
 `;
 
 const People = styled.div`

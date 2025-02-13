@@ -141,6 +141,7 @@ const Blog = () => {
 
 const Wrapper = styled.section`
   height: auto;
+  padding: 4rem 2rem;
 `;
 
 const PostDiv = styled.div`
