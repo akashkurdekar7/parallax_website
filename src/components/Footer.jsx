@@ -96,6 +96,8 @@ const Wrapper = styled.footer`
     flex-direction: column;
   }
   .logo {
+    font-family: "Rocktown", sans-serif;
+    letter-spacing: 1px;
     font-size: 24px;
     font-weight: bold;
   }
