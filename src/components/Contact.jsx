@@ -11,13 +11,14 @@ import {
 const Contact = () => {
   return (
     <Wrapper id="contact">
-      <div className="container">
+      <div className="head">
         <h2 className="title">Contact</h2>
         <p className="subtitle">
-          Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-          consectetur velit
+          Reach out to us for any inquiries or support.
         </p>
+      </div>
 
+      <div className="container">
         <div className="contact-grid">
           <ContactBox>
             <FontAwesomeIcon icon={faMapMarkerAlt} className="icon" />
@@ -44,18 +45,17 @@ const Contact = () => {
             <FontAwesomeIcon icon={faClock} className="icon" />
             <h3>Open Hours</h3>
             <p>Monday - Friday</p>
-            <p>9:00AM - 05:00PM</p>
+            <p>9:00 AM - 05:00 PM</p>
           </ContactBox>
         </div>
-
         <ContactForm>
           <div className="input-row">
-            <input type="text" placeholder="Your Name" />
-            <input type="email" placeholder="Your Email" />
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
           </div>
-          <input type="text" placeholder="Subject" />
-          <textarea placeholder="Message"></textarea>
-          <button>Send Message</button>
+          <input type="text" placeholder="Subject" required />
+          <textarea placeholder="Message" required></textarea>
+          <button type="submit">Send Message</button>
         </ContactForm>
       </div>
     </Wrapper>
@@ -63,22 +63,19 @@ const Contact = () => {
 };
 
 const Wrapper = styled.section`
-  .title {
-    font-size: 2rem;
-    color: #e84545;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 
-  .subtitle {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 2rem;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
-
   .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
 `;
 
@@ -107,9 +104,9 @@ const ContactBox = styled.div`
   }
 `;
 
-const ContactForm = styled.form`
+const ContactForm = styled.div`
+  width: 100%;
   max-width: 600px;
-  margin: 0 auto;
   background: #f9f9f9;
   padding: 2rem;
   border-radius: 10px;
@@ -119,7 +116,6 @@ const ContactForm = styled.form`
     display: flex;
     gap: 1rem;
   }
-
   input,
   textarea {
     width: 100%;
@@ -138,10 +134,6 @@ const ContactForm = styled.form`
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-  }
-
-  button:hover {
-    background: #d63e3e;
   }
 `;
 
