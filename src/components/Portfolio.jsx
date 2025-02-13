@@ -85,7 +85,10 @@ const Portfolio = () => {
       <SearchContainer>
         {list.map((category, index) => (
           <Category key={index}>
-            <button onClick={() => setSelectedCategory(category.name)}>
+            <button
+              className={selectedCategory === category.name ? "active" : ""}
+              onClick={() => setSelectedCategory(category.name)}
+            >
               {category.name}
             </button>
           </Category>
@@ -94,8 +97,8 @@ const Portfolio = () => {
 
       <ImageContainer>
         {selectedImages.map((src, idx) => (
-          <div className="box">
-            <img key={idx} src={src} alt={selectedCategory} />
+          <div key={idx} className="box">
+            <img src={src} alt={selectedCategory} />
           </div>
         ))}
       </ImageContainer>
@@ -107,28 +110,59 @@ const Wrapper = styled.section`
   text-align: center;
   padding: 2rem;
   height: auto;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
 `;
 
 const SearchContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 `;
 
 const Category = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+    border: 2px solid transparent;
+  }
+
+  .active {
+    background-color: #e84545;
+    color: white;
+    border: 2px solid #e84545;
+  }
+
+  @media (max-width: 768px) {
+    button {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    button {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.8rem;
+    }
+  }
 `;
 
 const ImageContainer = styled.div`
-  /* margin-top: 2rem; */
   margin: 20px auto;
-  /* display: flex;
-  justify-content: center;
-  flex-wrap: wrap; */
   gap: 1rem;
   columns: 4;
   column-gap: 20px;
@@ -141,18 +175,18 @@ const ImageContainer = styled.div`
   }
 
   img {
-    max-width: 100%;
+    width: 100%;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   @media (max-width: 1200px) {
-    width: calc(100%-40px);
     columns: 3;
   }
   @media (max-width: 768px) {
     columns: 2;
+    gap: 10px;
   }
   @media (max-width: 480px) {
     columns: 1;
