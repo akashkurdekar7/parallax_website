@@ -119,10 +119,6 @@ const Banner = styled.div`
   background-color: ${({ theme }) => theme.backgroundLight};
   display: flex;
   justify-content: space-evenly;
-  width: calc(100% + 30rem);
-  margin-left: -15rem;
-  margin-right: -15rem;
-  margin-bottom: -2rem;
 
   .banner-images {
     display: flex;

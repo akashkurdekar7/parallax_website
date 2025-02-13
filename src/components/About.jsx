@@ -16,10 +16,11 @@ const About = () => {
       <Info>
         <div className="info">
           <h2 className="heading">about us</h2>
-          <h3 className="subtitle">Lorem ipsum dolor sit amet.</h3>
+          <h3 className="subtitle">lorem10Lorem ipsum dolor sit amet.</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-            exercitationem non tenetur dicta cumque possimus.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Perferendis, odio?Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Velit exercitationem non tenetur dicta cumque possimus.
           </p>
           <button>
             See More <FontAwesomeIcon icon={faArrowRight} />
@@ -101,34 +102,59 @@ const Wrapper = styled.section`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 3fr 0.4fr;
-  height: 900px !important;
+  height: auto;
   scroll-margin-top: 80px;
 `;
 const Info = styled.div`
-  padding: 2rem 2rem;
-  height: 500px;
+  padding: 2rem;
+  height: auto;
   display: flex;
-  gap: 3rem;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
+  gap: 3rem;
   color: ${({ theme }) => theme.textDark};
 
   .info {
     display: flex;
-    max-width: 45%;
     flex-direction: column;
+    max-width: 40%;
     gap: 1rem;
     text-align: left;
-    /* margin-top: 10rem; */
     justify-content: center;
   }
+
   .subtitle {
     text-align: left;
+    font-size: 1.5rem;
   }
+
   .tiles {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    .info {
+      max-width: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .tiles {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+    }
   }
 `;
 
@@ -170,31 +196,32 @@ const Tile = styled.div`
 `;
 
 const Banner = styled.div`
-  position: relative;
-  width: 100%;
   height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  position: relative;
+  width: 100%;
 
   .bgc {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 100%;
-    background: url(${statsBanner}) center/cover no-repeat;
-  }
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(${statsBanner});
 
-  .bgc::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
   }
 
   .stats {
@@ -205,7 +232,7 @@ const Banner = styled.div`
     justify-content: center;
     width: 100%;
     max-width: 1200px;
-    gap: 3rem;
+    gap: 4rem;
     text-align: center;
     color: ${({ theme }) => theme.textLight};
   }
@@ -215,6 +242,7 @@ const Banner = styled.div`
     flex-direction: column;
     align-items: center;
     transition: transform 0.3s ease;
+    width: 150px;
 
     &:hover {
       transform: scale(1.1);
@@ -232,6 +260,19 @@ const Banner = styled.div`
     font-weight: 500;
   }
 
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .stats {
+      gap: 2rem;
+    }
+    p {
+      font-size: 2rem;
+    }
+    span {
+      font-size: 1rem;
+    }
+  }
+
   @media (max-width: 768px) {
     .stats {
       flex-direction: column;
@@ -241,8 +282,29 @@ const Banner = styled.div`
     .box {
       width: 100%;
     }
+
+    p {
+      font-size: 1.8rem;
+    }
+    span {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .stats {
+      gap: 1rem;
+    }
+    .box {
+      width: 100%;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+    span {
+      font-size: 0.8rem;
+    }
   }
 `;
-
 
 export default About;
