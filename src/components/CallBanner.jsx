@@ -180,6 +180,9 @@ const Testimonials = styled.div`
   display: flex;
   padding: 2rem 10rem;
 
+  .slick-dots {
+    bottom: 0;
+  }
   .intro {
     max-width: 50%;
     h2 {
