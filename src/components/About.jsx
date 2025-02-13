@@ -16,7 +16,7 @@ const About = () => {
       <Info>
         <div className="info">
           <h2 className="heading">about us</h2>
-          <h3 className="subtitle">lorem10Lorem ipsum dolor sit amet.</h3>
+          <h3 className="subtitle">lore Lorem ipsum dolor sit amet.</h3>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             Perferendis, odio?Lorem ipsum dolor sit amet consectetur adipisicing
@@ -104,6 +104,11 @@ const Wrapper = styled.section`
   grid-template-rows: 3fr 0.4fr;
   height: auto;
   scroll-margin-top: 80px;
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+    grid-template-rows: none;
+  }
 `;
 const Info = styled.div`
   padding: 2rem;
