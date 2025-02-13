@@ -277,7 +277,6 @@ const Banner = styled.div`
     font-weight: 500;
   }
 
-  /* Responsive Styles */
   @media (max-width: 1024px) {
     .stats {
       gap: 2rem;

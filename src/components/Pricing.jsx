@@ -311,7 +311,7 @@ const Prices = styled.div`
   display: flex;
   justify-content: center;
   gap: 2rem;
-  flex-wrap: wrap; /* Allow the boxes to wrap on smaller screens */
+  flex-wrap: wrap;
 
   .box {
     padding: 20px;
@@ -326,8 +326,8 @@ const Prices = styled.div`
     transition: transform 0.3s ease, border-color 0.3s ease,
       box-shadow 0.3s ease;
     width: 100%;
-    max-width: 350px; /* Limit the width of each box */
-    margin-bottom: 2rem; /* Add margin at the bottom for spacing */
+    max-width: 350px;
+    margin-bottom: 2rem;
 
     &:nth-child(2) {
       transform: scale(1.1);
@@ -447,21 +447,19 @@ const Prices = styled.div`
   }
 
   @media (max-width: 1024px) {
-    /* Adjust layout for tablets */
     .box {
-      max-width: 45%; /* Adjust box size */
+      max-width: 45%;
     }
   }
 
   @media (max-width: 768px) {
-    /* Adjust layout for mobile */
     .box {
-      max-width: 80%; /* Adjust box size for mobile */
-      padding: 15px; /* Reduce padding for mobile */
+      max-width: 80%;
+      padding: 15px;
     }
 
     .obj {
-      padding: 0rem 1rem; /* Adjust padding for smaller screens */
+      padding: 0rem 1rem;
     }
   }
 `;
