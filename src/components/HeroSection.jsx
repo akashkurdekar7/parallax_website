@@ -63,16 +63,20 @@ const Subscribe = styled.div`
   .con {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 33%;
     transform: translate(-50%, -50%);
     max-width: 600px;
     padding: 0 1rem;
   }
 
+  .heading {
+    color: ${({ theme }) => theme.textLight};
+  }
   .sub-title {
     font-size: 1.2rem;
     margin-bottom: 1rem;
     color: #fff;
+    text-align: left;
   }
 
   .subscribe {
@@ -87,6 +91,7 @@ const Subscribe = styled.div`
     border-radius: 5px;
     width: 250px;
     font-size: 1rem;
+    width: 100%;
   }
 
   button {

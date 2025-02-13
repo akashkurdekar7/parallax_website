@@ -22,7 +22,7 @@ const Navigation = () => {
         <h1 className="logo">Logo</h1>
       </div>
 
-      <NavList menuOpen={menuOpen} scrolling={scrolling}>
+      <NavList $menuOpen={menuOpen} scrolling={scrolling}>
         <div className="menu-header">
           <FontAwesomeIcon
             icon={faTimes}
@@ -146,7 +146,7 @@ const NavList = styled.ul`
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.9);
-    display: ${({ menuOpen }) => (menuOpen ? "flex" : "none")};
+    display: ${({ $menuOpen }) => ($menuOpen ? "flex" : "none")};
     flex-direction: column;
     align-items: center;
     justify-content: center;

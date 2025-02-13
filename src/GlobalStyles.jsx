@@ -108,6 +108,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .heading {
+    text-align: left;
     text-transform: capitalize;
     font-size: 2rem;
   }

@@ -64,7 +64,7 @@ const Navigator = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 500;
   background-color: ${({ theme }) => theme.primaryColor};
   border-radius: 50%;
   padding: 10px;
