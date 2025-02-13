@@ -19,88 +19,84 @@ const Services = () => {
       </p>
 
       <List>
-        <div className="box1">
-          <Box>
-            <div className="icon-box">
-              <FontAwesomeIcon className="icon" icon={faBriefcase} />
-            </div>
-            <div className="content">
-              <h4>Lorem, ipsum.</h4>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
-                optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
-                aut.
-              </p>
-            </div>
-          </Box>
-          <Box>
-            <div className="icon-box">
-              <FontAwesomeIcon className="icon" icon={faClipboardList} />
-            </div>
-            <div className="content">
-              <h4>Lorem, ipsum.</h4>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
-                optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
-                aut.
-              </p>
-            </div>
-          </Box>
-          <Box>
-            <div className="icon-box">
-              <FontAwesomeIcon className="icon" icon={faChartBar} />
-            </div>
-            <div className="content">
-              <h4>Lorem, ipsum.</h4>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
-                optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
-                aut.
-              </p>
-            </div>
-          </Box>
-        </div>
-        <div className="box2">
-          <Box>
-            <div className="icon-box">
-              <FontAwesomeIcon className="icon" icon={faBinoculars} />
-            </div>
-            <div className="content">
-              <h4>Lorem, ipsum.</h4>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
-                optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
-                aut.
-              </p>
-            </div>
-          </Box>
-          <Box>
-            <div className="icon-box">
-              <FontAwesomeIcon className="icon" icon={faSun} />
-            </div>
-            <div className="content">
-              <h4>Lorem, ipsum.</h4>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
-                optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
-                aut.
-              </p>
-            </div>
-          </Box>
-          <Box>
-            <div className="icon-box">
-              <FontAwesomeIcon className="icon" icon={faCalendarAlt} />
-            </div>
-            <div className="content">
-              <h4>Lorem, ipsum.</h4>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
-                optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
-                aut.
-              </p>
-            </div>
-          </Box>
-        </div>
+        <Box>
+          <div className="icon-box">
+            <FontAwesomeIcon className="icon" icon={faBriefcase} />
+          </div>
+          <div className="content">
+            <h4>Lorem, ipsum.</h4>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
+              optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
+              aut.
+            </p>
+          </div>
+        </Box>
+        <Box>
+          <div className="icon-box">
+            <FontAwesomeIcon className="icon" icon={faClipboardList} />
+          </div>
+          <div className="content">
+            <h4>Lorem, ipsum.</h4>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
+              optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
+              aut.
+            </p>
+          </div>
+        </Box>
+        <Box>
+          <div className="icon-box">
+            <FontAwesomeIcon className="icon" icon={faChartBar} />
+          </div>
+          <div className="content">
+            <h4>Lorem, ipsum.</h4>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
+              optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
+              aut.
+            </p>
+          </div>
+        </Box>
+        <Box>
+          <div className="icon-box">
+            <FontAwesomeIcon className="icon" icon={faBinoculars} />
+          </div>
+          <div className="content">
+            <h4>Lorem, ipsum.</h4>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
+              optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
+              aut.
+            </p>
+          </div>
+        </Box>
+        <Box>
+          <div className="icon-box">
+            <FontAwesomeIcon className="icon" icon={faSun} />
+          </div>
+          <div className="content">
+            <h4>Lorem, ipsum.</h4>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
+              optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
+              aut.
+            </p>
+          </div>
+        </Box>
+        <Box>
+          <div className="icon-box">
+            <FontAwesomeIcon className="icon" icon={faCalendarAlt} />
+          </div>
+          <div className="content">
+            <h4>Lorem, ipsum.</h4>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
+              optio molestias vel fugiat eveniet, omnis fugit earum nobis quam
+              aut.
+            </p>
+          </div>
+        </Box>
       </List>
     </Wrapper>
   );
@@ -117,10 +113,15 @@ const Wrapper = styled.section`
 
 const List = styled.div`
   padding: 1rem 10rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px 10px;
+  grid-template-areas:
+    "a b"
+    "c d"
+    "e f";
 
   .box1,
   .box2 {
@@ -136,10 +137,6 @@ const Box = styled.div`
   align-items: center;
   gap: 2.5rem;
   padding: 1rem 1.5rem;
-  /* border: 1px solid rgba(0, 0, 0, 0.1); */
-  /* border-radius: 5px; */
-  /* background: rgba(0, 0, 0, 0.1); */
-  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
 
   &::after {
     content: "";
@@ -159,6 +156,25 @@ const Box = styled.div`
     width: 93%;
     height: 2px;
     background-color: ${({ theme }) => theme.backgroundDark};
+  }
+
+  &:nth-child(1) {
+    grid-area: a;
+  }
+  &:nth-child(2) {
+    grid-area: b;
+  }
+  &:nth-child(3) {
+    grid-area: c;
+  }
+  &:nth-child(4) {
+    grid-area: d;
+  }
+  &:nth-child(5) {
+    grid-area: e;
+  }
+  &:nth-child(6) {
+    grid-area: f;
   }
 
   .icon-box {

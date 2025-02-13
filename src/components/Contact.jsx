@@ -85,6 +85,9 @@ const Wrapper = styled.section`
       grid-template-columns: 1fr;
       place-items: center;
     }
+    .contact-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
   }
 `;
 
