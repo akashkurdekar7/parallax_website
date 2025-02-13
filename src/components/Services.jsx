@@ -12,7 +12,7 @@ import {
 
 const Services = () => {
   return (
-    <Wrapper>
+    <Wrapper id="services">
       <h1 className="title">Services</h1>
       <p className="secondary-title">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, harum!

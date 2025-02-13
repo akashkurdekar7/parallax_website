@@ -12,19 +12,19 @@ const Navigation = ({ scrolling }) => {
       <NavMenu scrolling={scrolling}>
         <ul className="nav-items-list">
           {[
-            "Home",
-            "About",
-            "Services",
-            "Portfolio",
-            "Pricing",
-            "Team",
-            "Blog",
-            "Contact",
+            { name: "Home", link: "#home" },
+            { name: "About", link: "#about" },
+            { name: "Services", link: "#services" },
+            { name: "Portfolio", link: "#portfolio" },
+            { name: "Pricing", link: "#pricing" },
+            { name: "Team", link: "#team" },
+            { name: "Blog", link: "#blog" },
+            { name: "Contact", link: "#contact" },
           ].map((item) => (
-            <li key={item} className="nav-items">
-              <Link className="nav-items-link" to={`/${item.toLowerCase()}`}>
-                {item}
-              </Link>
+            <li key={item.name} className="nav-items">
+              <a className="nav-items-link" href={item.link}>
+                {item.name}
+              </a>
             </li>
           ))}
         </ul>

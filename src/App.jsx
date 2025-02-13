@@ -7,6 +7,11 @@ import { ThemeProvider } from "styled-components";
 import About from "./components/About";
 import Services from "./components/Services";
 import Features from "./components/Features";
+import Portfolio from "./components/Portfolio";
+import Pricing from "./components/Pricing";
+import Team from "./components/Team";
+import Blog from "./components/Blog";
+import CallBanner from "./components/CallBanner";
 
 const theme = {
   primaryColor: "#E84545",
@@ -28,6 +33,11 @@ const App = () => {
           <About />
           <Services />
           <Features />
+          <Portfolio />
+          <Pricing />
+          <Team />
+          <CallBanner />
+          <Blog />
         </main>
         <Footer />
       </>

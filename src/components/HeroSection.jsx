@@ -10,7 +10,7 @@ import client5 from "../assets/clients/client-5.png";
 
 const HeroSection = () => {
   return (
-    <Wrapper>
+    <Wrapper id="home">
       <Subscribe>
         <div className="con">
           <h3 className="title">Welcome to our website</h3>

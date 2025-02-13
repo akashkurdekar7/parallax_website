@@ -12,7 +12,7 @@ import {
 
 const About = () => {
   return (
-    <Wrapper>
+    <Wrapper id="about">
       <Info>
         <div className="info">
           <h2 className="title">about us</h2>
@@ -102,6 +102,7 @@ const Wrapper = styled.section`
   grid-template-columns: 1fr;
   grid-template-rows: 3fr 0.4fr;
   height: 900px !important;
+  scroll-margin-top: 80px;
 `;
 const Info = styled.div`
   padding: 2rem 2rem;
