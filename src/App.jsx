@@ -12,6 +12,7 @@ import Pricing from "./components/Pricing";
 import Team from "./components/Team";
 import Blog from "./components/Blog";
 import CallBanner from "./components/CallBanner";
+import Contact from "./components/Contact";
 
 const theme = {
   primaryColor: "#E84545",
@@ -38,6 +39,7 @@ const App = () => {
           <Team />
           <CallBanner />
           <Blog />
+          <Contact />
         </main>
         <Footer />
       </>
