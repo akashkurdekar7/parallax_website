@@ -1,14 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import statsBanner from "../assets/Images/stats-bg.jpg";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 import {
   faBuilding,
   faChartLine,
   faCogs,
   faNetworkWired,
 } from "@fortawesome/free-solid-svg-icons";
+import CountUp from "react-countup";
 
 const About = () => {
   return (
@@ -74,22 +76,90 @@ const About = () => {
       <Banner>
         <div className="bgc">
           <div className="stats">
-            <div className="box box1">
-              <p>232</p>
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="box"
+            >
+              <motion.p
+                className="stat-p"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{
+                  opacity: 1,
+                  scale: 1,
+                  transition: { duration: 1.5 },
+                }}
+                viewport={{ once: true }}
+              >
+                <CountUp end={232} start={0} duration={3} />
+                <span>+</span>
+              </motion.p>
               <span>Clients</span>
-            </div>
-            <div className="box box2">
-              <p>521</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="box"
+            >
+              <motion.p
+                className="stat-p"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{
+                  opacity: 1,
+                  scale: 1,
+                  transition: { duration: 1.5 },
+                }}
+                viewport={{ once: true }}
+              >
+                <CountUp end={521} start={0} duration={3} />
+                <span>+</span>
+              </motion.p>
               <span>Projects</span>
-            </div>
-            <div className="box box3">
-              <p>1453</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="box"
+            >
+              <motion.p
+                className="stat-p"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{
+                  opacity: 1,
+                  scale: 1,
+                  transition: { duration: 1.5 },
+                }}
+                viewport={{ once: true }}
+              >
+                <CountUp end={1453} start={0} duration={3} />
+                <span>+</span>
+              </motion.p>
               <span>Hours of support</span>
-            </div>
-            <div className="box box4">
-              <p>32</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="box"
+            >
+              <motion.p
+                className="stat-p"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{
+                  opacity: 1,
+                  scale: 1,
+                  transition: { duration: 1.5 },
+                }}
+                viewport={{ once: true }}
+              >
+                <CountUp end={32} start={0} duration={3} />
+                <span>+</span>
+              </motion.p>
               <span>Workers</span>
-            </div>
+            </motion.div>
           </div>
         </div>
       </Banner>
@@ -248,7 +318,6 @@ const Banner = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    max-width: 1200px;
     gap: 4rem;
     text-align: center;
     color: ${({ theme }) => theme.textLight};
@@ -259,21 +328,20 @@ const Banner = styled.div`
     flex-direction: column;
     align-items: center;
     transition: transform 0.3s ease;
-    width: 150px;
+    width: max-content;
 
     &:hover {
       transform: scale(1.1);
     }
   }
 
-  p {
-    font-size: 2.5rem;
+  .stat-p {
     font-weight: 700;
     margin: 0;
   }
 
   span {
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-weight: 500;
   }
 
@@ -281,7 +349,7 @@ const Banner = styled.div`
     .stats {
       gap: 2rem;
     }
-    p {
+    .stat-p {
       font-size: 2rem;
     }
     span {
@@ -299,7 +367,7 @@ const Banner = styled.div`
       width: 100%;
     }
 
-    p {
+    .stat-p {
       font-size: 1.8rem;
     }
     span {
@@ -314,7 +382,7 @@ const Banner = styled.div`
     .box {
       width: 100%;
     }
-    p {
+    .stat-p {
       font-size: 1.5rem;
     }
     span {

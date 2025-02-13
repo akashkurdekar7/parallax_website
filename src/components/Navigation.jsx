@@ -74,13 +74,15 @@ const Wrapper = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: ${({ scrolling }) => (scrolling ? "#333" : "transparent")};
+  background-color: ${({ scrolling, theme }) =>
+    scrolling ? theme.textLight : "transparent"};
   transition: background-color 0.3s ease-in-out;
   z-index: 1000;
 
   .logo {
     color: ${({ theme }) => theme.primaryColor};
     font-size: 2.5rem;
+    margin: 0;
   }
 
   .menu-icon {
