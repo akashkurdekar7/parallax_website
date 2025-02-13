@@ -91,7 +91,7 @@ const Blog = () => {
     <Wrapper id="blog">
       <div className="head">
         <h2 className="title">Recent Posts</h2>
-        <h3 className="secondary-title">
+        <h3 className="subtitle">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
           pariatur.
         </h3>

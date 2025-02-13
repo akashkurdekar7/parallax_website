@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
     --background-dark: #141414; 
     --background-light: #f1f1f1;  
     --title-font: 2rem;
-    --secondary-title-font: 1.3rem;
+    --subtitle-font: 1.3rem;
   }
 
   * {
@@ -112,8 +112,8 @@ button {
     margin-bottom: 10px;
   }
 
-  .secondary-title {
-    font-size: var(--secondary-title-font);
+  .subtitle {
+    font-size: var(--subtitle-font);
     color: var(--text-dark);
     margin-bottom: 10px;
     text-align: center;

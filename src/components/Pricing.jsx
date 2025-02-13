@@ -50,7 +50,7 @@ const Pricing = () => {
     <Wrapper id="pricing">
       <div className="head">
         <h2 className="title">Pricing</h2>
-        <h3 className="secondary-title">Lorem ipsum dolor sit amet.</h3>
+        <h3 className="subtitle">Lorem ipsum dolor sit amet.</h3>
       </div>
       <Prices>
         <div className="box">

@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from "react-icons/fa";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMapMarkerAlt,
+  faPhoneAlt,
+  faEnvelope,
+  faClock,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Contact = () => {
   return (
@@ -9,88 +15,79 @@ const Contact = () => {
         <h2 className="title">Contact</h2>
         <p className="subtitle">
           Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-          consectetur velit.
+          consectetur velit
         </p>
-        <div className="content">
-          <div className="info-boxes">
-            <div className="info-box">
-              <FaMapMarkerAlt className="icon" />
-              <h3>Address</h3>
-              <p>A108 Adam Street</p>
-              <p>New York, NY 535022</p>
-            </div>
-            <div className="info-box">
-              <FaPhone className="icon" />
-              <h3>Call Us</h3>
-              <p>+1 5589 55488 55</p>
-              <p>+1 6678 254445 41</p>
-            </div>
-            <div className="info-box">
-              <FaEnvelope className="icon" />
-              <h3>Email Us</h3>
-              <p>info@example.com</p>
-              <p>contact@example.com</p>
-            </div>
-            <div className="info-box">
-              <FaClock className="icon" />
-              <h3>Open Hours</h3>
-              <p>Monday - Friday</p>
-              <p>9:00 AM - 05:00 PM</p>
-            </div>
-          </div>
 
-          <form>
-            <div className="form-group">
-              <input type="text" placeholder="Your Name" required />
-              <input type="email" placeholder="Your Email" required />
-            </div>
-            <input type="text" placeholder="Subject" required />
-            <textarea placeholder="Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-          </form>
+        <div className="contact-grid">
+          <ContactBox>
+            <FontAwesomeIcon icon={faMapMarkerAlt} className="icon" />
+            <h3>Address</h3>
+            <p>A108 Adam Street</p>
+            <p>New York, NY 535022</p>
+          </ContactBox>
+
+          <ContactBox>
+            <FontAwesomeIcon icon={faPhoneAlt} className="icon" />
+            <h3>Call Us</h3>
+            <p>+1 5589 55488 55</p>
+            <p>+1 6678 254445 41</p>
+          </ContactBox>
+
+          <ContactBox>
+            <FontAwesomeIcon icon={faEnvelope} className="icon" />
+            <h3>Email Us</h3>
+            <p>info@example.com</p>
+            <p>contact@example.com</p>
+          </ContactBox>
+
+          <ContactBox>
+            <FontAwesomeIcon icon={faClock} className="icon" />
+            <h3>Open Hours</h3>
+            <p>Monday - Friday</p>
+            <p>9:00AM - 05:00PM</p>
+          </ContactBox>
         </div>
+
+        <ContactForm>
+          <div className="input-row">
+            <input type="text" placeholder="Your Name" />
+            <input type="email" placeholder="Your Email" />
+          </div>
+          <input type="text" placeholder="Subject" />
+          <textarea placeholder="Message"></textarea>
+          <button>Send Message</button>
+        </ContactForm>
       </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
-  text-align: center;
-  padding: 3rem 1rem;
-  background: #fff;
-
   .title {
     font-size: 2rem;
-    margin-bottom: 0.5rem;
     color: #e84545;
   }
 
   .subtitle {
-    color: #777;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    color: #666;
     margin-bottom: 2rem;
   }
 
-  .content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  .info-boxes {
+  .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
   }
+`;
 
-  .info-box {
-    background: #f9f9f9;
-    padding: 1.5rem;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  }
+const ContactBox = styled.div`
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
   .icon {
     font-size: 2rem;
@@ -101,25 +98,24 @@ const Wrapper = styled.section`
   h3 {
     font-size: 1.2rem;
     color: #333;
-    margin-bottom: 0.5rem;
   }
 
   p {
-    font-size: 0.9rem;
-    color: #555;
+    font-size: 1rem;
+    color: #777;
+    margin: 5px 0;
   }
+`;
 
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    background: #f9f9f9;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  }
+const ContactForm = styled.form`
+  max-width: 600px;
+  margin: 0 auto;
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
-  .form-group {
+  .input-row {
     display: flex;
     gap: 1rem;
   }
@@ -127,15 +123,17 @@ const Wrapper = styled.section`
   input,
   textarea {
     width: 100%;
-    padding: 0.8rem;
+    padding: 10px;
+    margin-bottom: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
   }
 
   button {
+    width: 100%;
+    padding: 10px;
     background: #e84545;
     color: white;
-    padding: 0.8rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -143,13 +141,7 @@ const Wrapper = styled.section`
   }
 
   button:hover {
-    background: #d13434;
-  }
-
-  @media (min-width: 768px) {
-    .content {
-      flex-direction: row;
-    }
+    background: #d63e3e;
   }
 `;
 

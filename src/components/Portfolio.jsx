@@ -78,7 +78,7 @@ const Portfolio = () => {
   return (
     <Wrapper id="portfolio">
       <h1 className="title">Portfolio</h1>
-      <p className="secondary-title">
+      <p className="subtitle">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, harum!
       </p>
 

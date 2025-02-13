@@ -14,7 +14,7 @@ const Services = () => {
   return (
     <Wrapper id="services">
       <h1 className="title">Services</h1>
-      <p className="secondary-title">
+      <p className="subtitle">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, harum!
       </p>
 
@@ -110,7 +110,7 @@ const Wrapper = styled.section`
   height: auto;
   padding: 4rem 2rem;
 
-  .secondary-title {
+  .subtitle {
     text-align: center;
   }
 `;

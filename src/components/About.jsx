@@ -16,7 +16,7 @@ const About = () => {
       <Info>
         <div className="info">
           <h2 className="title">about us</h2>
-          <h3 className="secondary-title">Lorem ipsum dolor sit amet.</h3>
+          <h3 className="subtitle">Lorem ipsum dolor sit amet.</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
             exercitationem non tenetur dicta cumque possimus.

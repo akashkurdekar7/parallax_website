@@ -8,7 +8,7 @@ const Features = () => {
   return (
     <Wrapper id="features">
       <h1 className="title">Features</h1>
-      <h3 className="secondary-title">
+      <h3 className="subtitle">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, esse.
       </h3>
 

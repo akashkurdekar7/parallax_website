@@ -57,7 +57,7 @@ const Team = () => {
     <Wrapper>
       <div className="head">
         <h2 className="title">Our Team</h2>
-        <h3 className="secondary-title">
+        <h3 className="subtitle">
           Meet the talented individuals behind our success.
         </h3>
       </div>
