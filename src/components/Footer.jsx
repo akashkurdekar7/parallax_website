@@ -39,9 +39,15 @@ const Footer = () => {
         <div className="column">
           <h3 className="heading">Useful Links</h3>
           <ul className="list">
-            <li className="item">Home</li>
-            <li className="item">About us</li>
-            <li className="item">Services</li>
+            <li className="item" id="home">
+              Home
+            </li>
+            <li className="item" id="about">
+              About us
+            </li>
+            <li className="item" id="services">
+              Services
+            </li>
             <li className="item">Terms of service</li>
             <li className="item">Privacy policy</li>
           </ul>
