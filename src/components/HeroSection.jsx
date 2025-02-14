@@ -26,7 +26,7 @@ const HeroSection = () => {
       <Banner>
         {[client1, client2, client3, client4, client5].map((client, index) => (
           <div key={index} className="banner-images">
-            <img src={client} alt="clients" />
+            <img loading="lazy" src={client} alt="clients" />
           </div>
         ))}
       </Banner>

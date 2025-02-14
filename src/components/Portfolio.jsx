@@ -98,7 +98,7 @@ const Portfolio = () => {
       <ImageContainer>
         {selectedImages.map((src, idx) => (
           <div key={idx} className="box">
-            <img src={src} alt={selectedCategory} />
+            <img loading="lazy" src={src} alt={selectedCategory} />
           </div>
         ))}
       </ImageContainer>

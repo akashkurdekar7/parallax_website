@@ -98,7 +98,11 @@ const CallBanner = () => {
               <div key={index} className="testimonial-card">
                 <div className="top-section">
                   <div className="image">
-                    <img src={testimonial.img} alt={testimonial.name} />
+                    <img
+                      loading="lazy"
+                      src={testimonial.img}
+                      alt={testimonial.name}
+                    />
                   </div>
                   <div className="about">
                     <h2 className="name">{testimonial.name}</h2>

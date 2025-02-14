@@ -24,13 +24,23 @@ const Features = () => {
             <button>Get Started</button>
           </div>
           <div className="image">
-            <img src={feature1} className="first" alt="Feature 1" />
-            <img src={feature2} className="second" alt="Feature 2" />
+            <img
+              loading="lazy"
+              src={feature1}
+              className="first"
+              alt="Feature 1"
+            />
+            <img
+              loading="lazy"
+              src={feature2}
+              className="second"
+              alt="Feature 2"
+            />
           </div>
         </div>
         <div className="box">
           <div className="image">
-            <img src={feature3} alt="Feature 3" />
+            <img loading="lazy" src={feature3} alt="Feature 3" />
           </div>
           <div className="content">
             <h3>Lorem ipsum dolor sit.</h3>

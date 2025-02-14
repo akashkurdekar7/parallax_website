@@ -105,14 +105,18 @@ const Blog = () => {
             onMouseLeave={() => setHoveredPost(null)}
           >
             <div className="image">
-              <img src={post.image} alt="Post Thumbnail" />
+              <img loading="lazy" src={post.image} alt="Post Thumbnail" />
             </div>
             <div className="card-details">
               <h4 className="role">{post.role}</h4>
               <p className="desc">{post.desc}</p>
               <div className="details">
                 <div className="details-image">
-                  <img src={post.author.avatar} alt={post.author.name} />
+                  <img
+                    loading="lazy"
+                    src={post.author.avatar}
+                    alt={post.author.name}
+                  />
                 </div>
                 <div className="details-intro">
                   <h3 className="name">{post.author.name}</h3>
@@ -124,7 +128,11 @@ const Blog = () => {
             {hoveredPost === post.id && (
               <CommentBox>
                 <div className="comment-img">
-                  <img src={post.comment.image} alt="Commenter" />
+                  <img
+                    loading="lazy"
+                    src={post.comment.image}
+                    alt="Commenter"
+                  />
                 </div>
                 <div className="comment-text">
                   <h4>{post.comment.name}</h4>
