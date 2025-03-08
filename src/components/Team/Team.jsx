@@ -55,8 +55,8 @@ const Team = () => {
   return (
     <section id="team" className="container">
       <div className="text-center">
-        <h2 className="fs-2">Our Team</h2>
-        <p className="fs-4">
+        <h2 className="font-sign">Our Team</h2>
+        <p className="font-mono">
           Meet the talented individuals behind our success.
         </p>
       </div>

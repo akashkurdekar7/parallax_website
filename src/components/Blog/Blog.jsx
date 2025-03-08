@@ -90,8 +90,8 @@ const Blog = () => {
   return (
     <section className="container" id="blog">
       <div className="text-center">
-        <h1 className="fs-2">Recent Posts</h1>
-        <p className="fs-4">
+        <h1 className="font-sign">Recent Posts</h1>
+        <p className="font-mono">
           Discover the latest insights from industry experts.
         </p>
       </div>

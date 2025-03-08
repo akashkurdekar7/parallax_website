@@ -8,8 +8,8 @@ const Contact = () => {
   return (
     <section className="container" id="contact">
       <div className="text-center mb-4">
-        <h3 className="fs-2 fw-bold">Contact</h3>
-        <p className="fs-5 text-muted">
+        <h3 className="font-sign">Contact</h3>
+        <p className="font-mono">
           Reach out to us for any inquiries or support.
         </p>
       </div>

@@ -7,8 +7,8 @@ const Features = () => {
   return (
     <section className="container " id="features">
       <div className="text-center mb-4">
-        <h2 className="fs-2 fw-bold">Features</h2>
-        <p className="fs-4 text-muted">
+        <h2 className="font-sign">Features</h2>
+        <p className="font-mono">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
           magni.
         </p>

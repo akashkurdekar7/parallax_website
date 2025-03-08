@@ -1,3 +1,23 @@
+@font-face {
+  font-family: "Brittany Signature";
+  src: url("/src/BrittanySignature.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-sign {
+  font-family: "Brittany Signature", cursive !important;
+  font-size: 3rem;
+}
+
+.font-mono {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #888;
+  opacity: 0.7;
+  font-family: "Courier New", monospace !important;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +33,7 @@ main {
 section {
   height: 100%;
   min-height: 100vh;
-  padding: 4rem 0 !important;
+  padding: 6rem 0 !important;
 }
 
 a {

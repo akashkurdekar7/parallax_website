@@ -50,8 +50,8 @@ const Testimonials = () => {
     <>
       {/* CTA Section */}
       <div className="container-fluid text-center text-bg-dark p-5 d-flex flex-column gap-3 align-items-center">
-        <h2 className="text-capitalize">Call to Action</h2>
-        <p className="fs-5">
+        <h2 className="font-sign">Call to Action</h2>
+        <p className="font-mono">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
           distinctio dolor tempora dicta reprehenderit voluptas fugit vitae
           recusandae illum alias suscipit qui praesentium, dolorem autem atque
@@ -64,8 +64,8 @@ const Testimonials = () => {
       <section className="container" id="testimonials">
         <div className="row">
           <div className="col-12 col-lg-6 text-center text-md-start mb-4 d-flex flex-column justify-content-center">
-            <h2>Testimonials</h2>
-            <p>
+            <h2 className="font-sign">Testimonials</h2>
+            <p className="font-mono">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Repudiandae illum vero vel ratione repellendus ex excepturi
               reprehenderit facere obcaecati exercitationem blanditiis fuga

@@ -13,8 +13,8 @@ const About = () => {
         <div className="row row-gap-4">
           <div className="col-12 col-lg-6 d-flex align-items-center">
             <div className="text-center text-lg-start">
-              <h2 className="text-uppercase">About Us</h2>
-              <h4 className="subtitle">Lorem ipsum dolor sit amet.</h4>
+              <h2 className="text-uppercase font-sign">About Us</h2>
+              <h4 className="font-mono">Lorem ipsum dolor sit amet.</h4>
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Perferendis, odio? Lorem ipsum dolor sit amet consectetur

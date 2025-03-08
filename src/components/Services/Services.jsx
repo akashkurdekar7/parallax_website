@@ -60,8 +60,8 @@ const Services = () => {
       id="services"
     >
       <div className="text-center mb-4">
-        <h3 className="fs-2">Services</h3>
-        <p className="fs-5">
+        <h3 className="font-sign">Services</h3>
+        <p className="font-mono">
           Discover our range of professional services tailored to your needs.
         </p>
       </div>

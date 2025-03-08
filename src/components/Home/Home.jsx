@@ -71,7 +71,7 @@ const Home = () => {
         </div> */}
       </section>
 
-      <div className="container-fluid">
+      <div className="container-fluid border border-bottom-5 bg-secondary">
         <div className="row p-3 gap-2">
           {[client1, client2, client3, client4, client5].map(
             (client, index) => (

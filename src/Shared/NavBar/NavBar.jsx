@@ -29,7 +29,7 @@ const NavBar = () => {
     >
       <div className="container-fluid">
         <div className="logo">
-          <a href="#" className="navbar-brand text-uppercase fw-bolder">
+          <a href="#" className="navbar-brand fs-2 font-sign ">
             Logo
           </a>
         </div>

@@ -75,8 +75,8 @@ const Pricing = () => {
   return (
     <section className="container" id="pricing">
       <div className="text-center mb-4">
-        <h1 className="fs-2 fw-bold">Pricing</h1>
-        <p className="fs-4 text-muted">
+        <h1 className="font-sign">Pricing</h1>
+        <p className="font-mono">
           Discover the latest insights from industry experts.
         </p>
       </div>
