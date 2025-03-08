@@ -1,0 +1,27 @@
+.image_cont {
+  columns: 4;
+  column-gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+@media (max-width: 991px) {
+  .image_cont {
+    columns: 3;
+  }
+}
+@media (max-width: 576px) {
+  .image_cont {
+    columns: 1;
+  }
+}
+.images {
+  break-inside: avoid;
+}
+.image {
+  transition: transform 0.3s linear;
+}
+
+.image
+:hover {
+  transform: scale(1.1);
+}
