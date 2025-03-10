@@ -76,44 +76,50 @@ const Portfolio = () => {
     list.find((category) => category.name === selectedCategory)?.src || [];
 
   return (
-    <section id="portfolio" className="container">
-      <div className="text-center mb-4">
-        <h3 className="font-sign">Portfolio</h3>
-        <p className="font-mono">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
-          debitis.
-        </p>
-      </div>
-      <div className="container-fluid text-center">
-        <div className="row justify-content-center row-gap-3 ">
-          {list.map((category, index) => (
-            <div className="col-6 col-sm-4 col-md-auto" key={index}>
-              <button
-                type="button"
-                className="btn btn-danger text-capitalize"
-                onClick={() => setSelectedCategory(category.name)}
-              >
-                {category.name}
-              </button>
+    <section id="portfolio" className="section">
+      <div className="d-flex justify-content-center align-items-center">
+        <div className="container">
+          <div className="text-center mb-4">
+            <h3 className="font-sign">Portfolio</h3>
+            <p className="font-mono">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
+              debitis.
+            </p>
+          </div>
+          <div className="container-fluid">
+            <div className="row justify-content-center">
+              {list.map((category, index) => (
+                <div className="col-4 col-md" key={index}>
+                  <div className="p-3 text-center">
+                    <button
+                      type="button"
+                      className="btn btn-danger text-capitalize"
+                      onClick={() => setSelectedCategory(category.name)}
+                    >
+                      {category.name}
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+          <div className="container-fluid image_cont">
+            {selectedImages.length > 0 ? (
+              selectedImages.map((src, idx) => (
+                <div className="w-100 images" key={idx}>
+                  <img
+                    className="w-100 object-fit-cover rounded-4 mb-4 image"
+                    src={src}
+                    loading="lazy"
+                    alt={selectedCategory}
+                  />
+                </div>
+              ))
+            ) : (
+              <h3 className="text-center ">Loading</h3>
+            )}
+          </div>
         </div>
-      </div>
-      <div className="container-fluid image_cont">
-        {selectedImages.length > 0 ? (
-          selectedImages.map((src, idx) => (
-            <div className="w-100 images" key={idx}>
-              <img
-                className="w-100 object-fit-cover rounded-4 mb-4 image"
-                src={src}
-                loading="lazy"
-                alt={selectedCategory}
-              />
-            </div>
-          ))
-        ) : (
-          <h3 className="text-center ">Loading</h3>
-        )}
       </div>
     </section>
   );

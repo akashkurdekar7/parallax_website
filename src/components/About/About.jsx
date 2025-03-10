@@ -5,15 +5,12 @@ import { FaCogs, FaRegBuilding } from "react-icons/fa";
 
 const About = () => {
   return (
-    <>
-      <section
-        id="about"
-        className="container-fluid p-5 d-flex flex-column justify-content-center align-items-center h-100"
-      >
-        <div className="row row-gap-4">
+    <section id="about" className="section">
+      <div className="container py-5 ">
+        <div className="row">
           <div className="col-12 col-lg-6 d-flex align-items-center">
             <div className="text-center text-lg-start">
-              <h2 className="text-uppercase font-sign">About Us</h2>
+              <h2 className="font-sign">About Us</h2>
               <h4 className="font-mono">Lorem ipsum dolor sit amet.</h4>
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -28,7 +25,7 @@ const About = () => {
           </div>
 
           <div className="col-12 col-lg-6">
-            <div className="row row-gap-4">
+            <div className="row ">
               {[
                 {
                   icon: <FaRegBuilding aria-hidden="true" />,
@@ -51,8 +48,8 @@ const About = () => {
                   desc: "Seamless networking infrastructure for high-performance connectivity.",
                 },
               ].map((tile, index) => (
-                <div className="col-12 col-md-6" key={index}>
-                  <div className="tile border border-2 border-danger rounded-4 p-3 d-flex flex-column h-100">
+                <div className="col-12 col-md-6 p-3 " key={index}>
+                  <div className="tile shadow rounded p-4 h-100">
                     <span className="fs-5 text-black">{tile.icon}</span>
                     <h4 className="mt-2">{tile.title}</h4>
                     <p>{tile.desc}</p>
@@ -62,9 +59,9 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <div className="image-container position-relative">
+      <div className="image-container container-fluid p-0 position-relative">
         <div className="img"></div>
         <div className="overlay-content d-flex flex-column justify-content-center align-items-center text-white position-absolute top-0 left-0 w-100 h-100 z-3">
           <div className="row w-100 text-center row-gap-3">
@@ -86,7 +83,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: grab;
+  transition: all 0.3s linear;
 }
 
 .image-container {

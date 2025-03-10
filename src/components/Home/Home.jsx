@@ -10,15 +10,12 @@ import client5 from "../../assets/clients/client-5.png";
 
 const Home = () => {
   return (
-    <>
-      <section
-        className="container-fluid border border-2 home position-relative"
-        id="home"
-      >
+    <section className="home position-relative p-0" id="home">
+      <div className="container-fluid home_cont vh-100">
         <div className="container text-center z-2">
           <div className="row justify-content-center">
             <div className="col-12">
-              <h4 className="text-light">Welcome to our website</h4>
+              <h1 className="text-light">Welcome to our website</h1>
             </div>
             <div className="col-12">
               <p className="info text-light">
@@ -48,46 +45,28 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* <div className="position-absolute bottom-0 w-100 z-2">
-          <div className="container-fluid h-100">
-            <div className="row justify-content-center">
-              {[
-                "Amazon",
-                "Netflix",
-                "Google",
-                "Facebook",
-                "Apple",
-                "Microsoft",
-              ].map((item, index) => (
-                <div className="col text-center" key={index}>
-                  <h5 className="text-bg-dark p-3 rounded text-uppercase">
-                    {item}
-                  </h5>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div> */}
-      </section>
-
-      <div className="container-fluid border border-bottom-5 bg-secondary">
-        <div className="row p-3 gap-2">
+      <div className="container ">
+        <div className="row">
           {[client1, client2, client3, client4, client5].map(
             (client, index) => (
               <div key={index} className="col">
-                <img
-                  loading="lazy"
-                  className="img-fluid w-75"
-                  src={client}
-                  alt="clients"
-                />
+                <div className="p-4 text-center">
+                  <img
+                    loading="lazy"
+                    className="img-fluid"
+                    style={{ filter: "grayscale(1)", width: "100px" }}
+                    src={client}
+                    alt="clients"
+                  />
+                </div>
               </div>
             )
           )}
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

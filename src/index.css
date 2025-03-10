@@ -7,12 +7,13 @@
 
 .font-sign {
   font-family: "Brittany Signature", cursive !important;
-  font-size: 3rem;
+  font-size: calc(24px * 1.618);
+  font-weight: 500;
 }
 
 .font-mono {
+  font-size: calc(12px * 1.618);
   font-weight: 700;
-  font-size: 2rem;
   color: #888;
   opacity: 0.7;
   font-family: "Courier New", monospace !important;
@@ -33,15 +34,25 @@ main {
 section {
   height: 100%;
   min-height: 100vh;
-  padding: 6rem 0 !important;
+  padding: 6rem 0;
+}
+@media (max-width: 768px) {
+  section {
+    padding: 2rem 0;
+  }
 }
 
+ul,
+li,
 a {
+  list-style: none;
   text-decoration: none;
   cursor: pointer;
+  color: inherit;
 }
 
 img {
+  max-width: 100%;
   object-fit: cover;
   cursor: pointer;
 }

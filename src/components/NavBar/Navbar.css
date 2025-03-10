@@ -1,0 +1,18 @@
+.nav-link {
+  text-transform: uppercase;
+  transition: all 0.3s ease-in;
+}
+
+.nav-link:hover {
+  color: #b91646 !important;
+}
+
+.navbar-bg {
+  background-color: white;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar-bg-scrolled {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}

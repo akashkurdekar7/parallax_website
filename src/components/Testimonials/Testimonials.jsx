@@ -4,8 +4,8 @@ import test2 from "../../assets/testimonials/testimonials-2.jpg";
 import test3 from "../../assets/testimonials/testimonials-3.jpg";
 import test4 from "../../assets/testimonials/testimonials-4.jpg";
 import test5 from "../../assets/testimonials/testimonials-5.jpg";
-import { BiStar } from "react-icons/bi";
-import { BsStarFill } from "react-icons/bs";
+import { BsQuote, BsStarFill } from "react-icons/bs";
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const Testimonials = () => {
   const feedback = [
@@ -47,11 +47,13 @@ const Testimonials = () => {
   ];
 
   return (
-    <>
-      {/* CTA Section */}
-      <div className="container-fluid text-center text-bg-dark p-5 d-flex flex-column gap-3 align-items-center">
-        <h2 className="font-sign">Call to Action</h2>
-        <p className="font-mono">
+    <section
+      className="section d-flex flex-column justify-content-evenly"
+      id="testimonials"
+    >
+      <div className="banner text-center text-bg-dark p-5">
+        <h1 className="font-sign">Call to Action</h1>
+        <p className="font-mono fs-5">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
           distinctio dolor tempora dicta reprehenderit voluptas fugit vitae
           recusandae illum alias suscipit qui praesentium, dolorem autem atque
@@ -61,24 +63,61 @@ const Testimonials = () => {
         <button className="btn btn-warning">Call to Action</button>
       </div>
 
-      <section className="container" id="testimonials">
+      <div className="container mt-5">
         <div className="row">
           <div className="col-12 col-lg-6 text-center text-md-start mb-4 d-flex flex-column justify-content-center">
             <h2 className="font-sign">Testimonials</h2>
             <p className="font-mono">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Repudiandae illum vero vel ratione repellendus ex excepturi
-              reprehenderit facere obcaecati exercitationem blanditiis fuga
-              accusamus voluptate similique alias ullam quas, perferendis harum!
+              reprehenderit accusamus voluptate similique alias ullam quas,
+              perferendis harum!
             </p>
           </div>
 
           <div className="col-12 col-lg-6">
             <div
               id="carouselExampleIndicators"
-              className="carousel slide"
+              className="carousel slide h-100"
               data-bs-ride="carousel"
             >
+              <div className="carousel-inner">
+                {feedback.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className={`carousel-item ${idx === 0 ? "active" : ""}`}
+                  >
+                    <div className="d-flex align-items-center p-3">
+                      <img
+                        loading="lazy"
+                        src={item.img}
+                        alt={item.name}
+                        className="rounded-circle img-fluid"
+                        style={{
+                          width: "25%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                      />
+                      <div className="ms-3">
+                        <h5 className="mb-1">{item.name}</h5>
+                        <p className="text-muted mb-2">{item.role}</p>
+                        <div className="text-warning d-flex gap-1 fs-5">
+                          {[...Array(5)].map((_, i) => (
+                            <BsStarFill key={i} />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-center p-4 fs-5 text-muted">
+                      <FaQuoteLeft className="text-danger me-2" />
+                      {item.feedback}
+                      <FaQuoteRight className="text-danger ms-2" />
+                    </p>
+                  </div>
+                ))}
+              </div>
+
               <div className="carousel-indicators">
                 {feedback.map((_, idx) => (
                   <button
@@ -89,75 +128,22 @@ const Testimonials = () => {
                     className={idx === 0 ? "active" : ""}
                     aria-current={idx === 0 ? "true" : "false"}
                     aria-label={`Slide ${idx + 1}`}
+                    style={{
+                      width: "12px",
+                      height: "12px",
+                      borderRadius: "50%",
+                      backgroundColor: "#FF9292",
+                      border: "none",
+                      margin: "0 5px",
+                    }}
                   ></button>
                 ))}
               </div>
-
-              <div className="carousel-inner">
-                {feedback.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className={`carousel-item ${idx === 0 ? "active" : ""}`}
-                  >
-                    <img
-                      className="d-block w-100"
-                      loading="lazy"
-                      src={item.img}
-                      alt={item.name}
-                    />
-                    <div
-                      className="carousel-caption w-100 p-3"
-                      style={{
-                        backgroundColor: "rgba(0, 0, 0, 0.7)",
-                        bottom: "0%",
-                        left: "50%",
-                        transform: "translateX(-50%)",
-                        borderRadius: "10px",
-                        width: "80%",
-                      }}
-                    >
-                      <h2 className="fs-1 fw-bold text-light">{item.name}</h2>
-                      <h4 className="fs-4 text-warning">{item.role}</h4>
-                      <p className="fs-5 text-light">{item.feedback}</p>
-                      <div className="text-warning d-flex gap-2 mb-5 justify-content-center fs-5">
-                        {[...Array(5)].map((_, i) => (
-                          <BsStarFill key={i} />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <button
-                className="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev"
-              >
-                <span
-                  className="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span className="visually-hidden">Previous</span>
-              </button>
-              <button
-                className="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next"
-              >
-                <span
-                  className="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span className="visually-hidden">Next</span>
-              </button>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

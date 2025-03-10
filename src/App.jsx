@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./components/Home/Home";
-import NavBar from "./Shared/NavBar/NavBar";
+import NavBar from "./components/NavBar/NavBar";
 import About from "./components/About/About";
 import Services from "./components/Services/Services";
 import Portfolio from "./components/Portfolio/Portfolio";
@@ -10,6 +10,7 @@ import Contact from "./components/Contact/Contact";
 import Features from "./components/Features/Features";
 import Pricing from "./components/Pricing/Pricing";
 import Testimonials from "./components/Testimonials/Testimonials";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
@@ -29,6 +30,9 @@ const App = () => {
         <Blog />
         <Contact />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 };

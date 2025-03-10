@@ -53,32 +53,35 @@ const Team = () => {
     },
   ];
   return (
-    <section id="team" className="container">
-      <div className="text-center">
-        <h2 className="font-sign">Our Team</h2>
-        <p className="font-mono">
-          Meet the talented individuals behind our success.
-        </p>
-      </div>
+    <section id="team" className="section">
+      <div className="container">
+        <div className="text-center">
+          <h2 className="font-sign">Our Team</h2>
+          <p className="font-mono">
+            Meet the talented individuals behind our success.
+          </p>
+        </div>
 
-      <div className="container-fluid">
-        <div className="row row-gap-4">
+        <div className="row">
           {teamMembers.map((member) => (
-            <div className="col-12 col-sm-6 col-lg-4" key={member.id}>
-              <div className="card h-100 text-center">
+            <div
+              className="col-12 col-sm-6 col-lg-4 p-5 "
+              key={member.id}
+            >
+              <div className="card h-100 text-center border-0 ">
                 <img
-                  className="card-img-top"
+                  className="card-img-top rounded-circle team_img"
                   loading="lazy"
                   src={member.image}
                   alt={`${member.name} - ${member.role}`}
                 />
-                <div className="card-body">
-                  <h2
+                <div className="card-body h-100">
+                  <h3
                     className="card-title fw-normal"
-                    style={{ height: "3rem" }}
+                    style={{ height: "max-content" }}
                   >
                     {member.name}
-                  </h2>
+                  </h3>
                   <span className="fs-6 fw-bold">{member.role}</span>
                   <p className="card-text mt-2">{member.desc}</p>
                 </div>

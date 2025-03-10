@@ -55,27 +55,29 @@ const Services = () => {
   ];
 
   return (
-    <section
-      className="container d-flex justify-content-center flex-column gap-5"
-      id="services"
-    >
-      <div className="text-center mb-4">
-        <h3 className="font-sign">Services</h3>
-        <p className="font-mono">
-          Discover our range of professional services tailored to your needs.
-        </p>
-      </div>
-
-      <div className="row g-4">
-        {servicesData.map(({ id, icon, title, description }) => (
-          <div className="col-md-4 d-flex  text-center" key={id}>
-            <div className="p-4 shadow rounded">
-              <div className="text-primary mb-3">{icon}</div>
-              <h4 className="fw-bold">{title}</h4>
-              <p>{description}</p>
-            </div>
+    <section className="section" id="services">
+      <div className="d-flex justify-content-center align-items-center">
+        <div className="container">
+          <div className="text-center mb-5">
+            <h1 className="font-sign">Services</h1>
+            <p className="font-mono">
+              Discover our range of professional services tailored to your
+              needs.
+            </p>
           </div>
-        ))}
+
+          <div className="row">
+            {servicesData.map(({ id, icon, title, description }) => (
+              <div className="col-md-4 d-flex pb-4 text-center" key={id}>
+                <div className="p-4 shadow rounded h-100">
+                  <div className="mb-3">{icon}</div>
+                  <h4 className="fw-bold">{title}</h4>
+                  <p>{description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

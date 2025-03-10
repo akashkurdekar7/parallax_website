@@ -88,72 +88,76 @@ const Blog = () => {
   ];
 
   return (
-    <section className="container" id="blog">
-      <div className="text-center">
-        <h1 className="font-sign">Recent Posts</h1>
-        <p className="font-mono">
-          Discover the latest insights from industry experts.
-        </p>
-      </div>
+    <section className="section" id="blog">
+      <div className="container">
+        <div className="text-center">
+          <h1 className="font-sign">Recent Posts</h1>
+          <p className="font-mono">
+            Discover the latest insights from industry experts.
+          </p>
+        </div>
 
-      <div className="container-fluid">
-        <div className="row row-gap-3">
-          {posts.map((post) => (
-            <div
-              className="col-12 col-sm-6 col-lg-4 position-relative"
-              key={post.id}
-              onMouseEnter={() => setHoveredPost(post.id)}
-              onMouseLeave={() => setHoveredPost(null)}
-            >
-              <div className="card position-relative h-100">
-                <img
-                  src={post.image}
-                  alt={post.role}
-                  className="card-img-top"
-                />
-                <div className="card-body">
-                  <div className="card-text fw-bold">{post.role}</div>
-                  <div className="card-text">{post.desc}</div>
+        <div className="container-fluid">
+          <div className="row row-gap-3">
+            {posts.map((post) => (
+              <div
+                className="col-12 col-sm-6 col-lg-4 position-relative"
+                key={post.id}
+                onMouseEnter={() => setHoveredPost(post.id)}
+                onMouseLeave={() => setHoveredPost(null)}
+              >
+                <div className="card position-relative h-100 border-0 shadow">
+                  <img
+                    src={post.image}
+                    alt={post.role}
+                    className="card-img-top"
+                  />
+                  <div className="card-body p-4">
+                    <div className="card-text text-muted">{post.role}</div>
+                    <div className="card-text fw-bold">{post.desc}</div>
+                  </div>
+
+                  {hoveredPost === post.id && (
+                    <div className="position-absolute top-0 rounded-2 start-0 w-100 h-100 bg-dark opacity-25 d-flex align-items-center justify-content-center text-white p-3"></div>
+                  )}
+
+                  <div className="card-footer border-0 d-flex align-items-center gap-2 px-4 py-2">
+                    <img
+                      className="rounded-circle"
+                      src={post.author.avatar}
+                      alt={post.author.name}
+                      style={{ width: "40px", height: "40px" }}
+                    />
+                    <div>
+                      <h3 className="fs-6 mb-0">{post.author.name}</h3>
+                      <span className="fs-6 text-muted">
+                        {post.author.date}
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
                 {hoveredPost === post.id && (
-                  <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25 d-flex align-items-center justify-content-center text-white p-3"></div>
+                  <div className="position-absolute top-0 start-50 translate-middle-x text-bg-dark d-flex align-items-center gap-3 p-2 rounded-3 shadow show-transition">
+                    <img
+                      src={post.comment.image}
+                      className="rounded-circle"
+                      alt="commenter"
+                      style={{ width: "30px" }}
+                    />
+                    <div>
+                      <span className="fw-bold" style={{ fontSize: "1rem" }}>
+                        {post.comment.name}
+                      </span>
+                      <p className="mb-0" style={{ fontSize: ".8rem" }}>
+                        {post.comment.text}
+                      </p>
+                    </div>
+                  </div>
                 )}
-
-                <div className="card-footer d-flex align-items-center gap-2">
-                  <img
-                    className="rounded-circle"
-                    src={post.author.avatar}
-                    alt={post.author.name}
-                    style={{ width: "40px", height: "40px" }}
-                  />
-                  <div>
-                    <h3 className="fs-6 mb-0">{post.author.name}</h3>
-                    <span className="fs-6 text-muted">{post.author.date}</span>
-                  </div>
-                </div>
               </div>
-
-              {hoveredPost === post.id && (
-                <div className="position-absolute top-0 start-50 translate-middle-x text-bg-dark d-flex align-items-center gap-3 p-2 rounded-3 shadow show-transition">
-                  <img
-                    src={post.comment.image}
-                    className="rounded-circle"
-                    alt="commenter"
-                    style={{ width: "30px" }}
-                  />
-                  <div>
-                    <span className="fw-bold" style={{ fontSize: "1rem" }}>
-                      {post.comment.name}
-                    </span>
-                    <p className="mb-0" style={{ fontSize: ".8rem" }}>
-                      {post.comment.text}
-                    </p>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
