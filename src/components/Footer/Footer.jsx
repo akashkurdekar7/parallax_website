@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="col-6 col-lg h-100 p-3">
-            <h2 className="logo">LOGO</h2>
+            <h2 className="font-sign">LOGO</h2>
             <p className="text">
               Cras fermentum odio eu feugiat lide par naso tierra. Justo eget
               nada terra videa magna derita valies darta donna mare fermentum
