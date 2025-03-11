@@ -52,8 +52,8 @@ const NavBar = () => {
           className={`navbar-collapse collapse text-center justify-content-center   ${!close}`}
           id="navbar"
         >
-          <div className="div">
-            <ul className="navbar-nav gap-md-4 gap-3">
+          <div className="d-flex align-items-center justify-content-center">
+            <ul className="navbar-nav gap-md-4 gap-3 align-items-center">
               {[
                 { name: "Home", link: "#home" },
                 { name: "About", link: "#about" },
@@ -78,11 +78,11 @@ const NavBar = () => {
                   </a>
                 </li>
               ))}
+              <div className="btn btn-danger text-capitalize mx-auto my-3">
+                get started
+              </div>
             </ul>
           </div>
-        </div>
-        <div className="btn btn-danger text-capitalize mx-auto my-3">
-          get started
         </div>
       </div>
     </nav>
