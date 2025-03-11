@@ -73,7 +73,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="section" id="pricing">
+    <section className="pricing" id="pricing">
       <div className="d-flex justify-content-center align-items-center">
         <div className="container">
           <div className="text-center mb-4">

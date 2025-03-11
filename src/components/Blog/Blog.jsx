@@ -88,7 +88,7 @@ const Blog = () => {
   ];
 
   return (
-    <section className="section" id="blog">
+    <section className="blog" id="blog">
       <div className="container">
         <div className="text-center">
           <h1 className="font-sign">Recent Posts</h1>

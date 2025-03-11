@@ -6,7 +6,7 @@ import { PiEnvelopeSimpleOpen } from "react-icons/pi";
 
 const Contact = () => {
   return (
-    <section className="section d-flex" id="contact">
+    <section className="contact d-flex" id="contact">
       <div className="container d-flex flex-column justify-content-center">
         <div className="text-center mb-4">
           <h3 className="font-sign">Contact</h3>

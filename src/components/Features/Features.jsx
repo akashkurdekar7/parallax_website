@@ -5,7 +5,7 @@ import feature3 from "../../assets/Images/features-light-3.jpg";
 
 const Features = () => {
   return (
-    <section className="section" id="features">
+    <section className="features" id="features">
       <div className="d-flex justify-content-center align-items-center">
         <div className="container">
           <div className="text-center mb-4">

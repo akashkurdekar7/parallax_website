@@ -29,7 +29,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="section">
+    <section id="about" className="about">
       <div className="container py-5 ">
         <div className="row">
           <div className="col-12 col-lg-6 d-flex align-items-center">

@@ -2,7 +2,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <section className="section text-bg-dark d-flex align-items-center">
+    <section className="banner text-bg-dark d-flex align-items-center">
       <div className="container text-center max-h-full">
         <h1 className="font-sign">Call to Action</h1>
         <p className="font-mono fs-5">

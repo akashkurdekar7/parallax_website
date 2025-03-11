@@ -48,7 +48,7 @@ const Testimonials = () => {
 
   return (
     <section
-      className="section d-flex flex-column justify-content-evenly"
+      className="testimonials d-flex flex-column justify-content-evenly"
       id="testimonials"
     >
       <div className="container">

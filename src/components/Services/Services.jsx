@@ -55,7 +55,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="section" id="services">
+    <section className="services" id="services">
       <div className="d-flex justify-content-center align-items-center">
         <div className="container">
           <div className="text-center mb-5">

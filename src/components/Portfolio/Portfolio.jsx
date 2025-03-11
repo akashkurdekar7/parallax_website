@@ -76,7 +76,7 @@ const Portfolio = () => {
     list.find((category) => category.name === selectedCategory)?.src || [];
 
   return (
-    <section id="portfolio" className="section">
+    <section id="portfolio" className="portfolio">
       <div className="d-flex justify-content-center align-items-center">
         <div className="container">
           <div className="text-center mb-4">

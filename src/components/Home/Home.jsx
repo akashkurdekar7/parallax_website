@@ -39,7 +39,7 @@ const Home = () => {
           {[client1, client2, client3, client4, client5].map(
             (client, index) => (
               <div key={index} className="col">
-                <div className="p-md-4 p-1 text-center">
+                <div className="p-md-4 pt-3 text-center">
                   <img
                     loading="lazy"
                     className="img-fluid w-100"

@@ -53,7 +53,7 @@ const Team = () => {
     },
   ];
   return (
-    <section id="team" className="section">
+    <section id="team" className="team">
       <div className="container">
         <div className="text-center">
           <h2 className="font-sign">Our Team</h2>

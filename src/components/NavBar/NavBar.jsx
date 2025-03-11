@@ -3,7 +3,7 @@ import "./Navbar.css";
 
 const NavBar = () => {
   const [scrolled, setScrolling] = useState(false);
-  const [close, setClose] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleScroll = useCallback(() => {
     requestAnimationFrame(() => {
@@ -12,17 +12,25 @@ const NavBar = () => {
       } else {
         setScrolling(false);
       }
+      // setScrolled(window.scrollY > 50);
     });
   }, []);
 
-  const handleCloseMenu = () => {
-    setClose(!close);
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+    document.body.style.overflow = menuOpen ? "auto" : "hidden";
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    document.body.style.overflow = "auto";
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      document.body.style.overflow = "auto";
     };
   }, [handleScroll]);
 
@@ -42,15 +50,16 @@ const NavBar = () => {
           className="navbar-toggler"
           data-bs-toggle="collapse"
           data-bs-target="#navbar"
+          aria-expanded={menuOpen}
           type="button"
-          onClick={handleCloseMenu}
+          onClick={toggleMenu}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div
           className={`navbar-collapse collapse text-center justify-content-center ${
-            !close ? "show" : ""
+            menuOpen ? "show" : ""
           }`}
           id="navbar"
         >
@@ -74,7 +83,7 @@ const NavBar = () => {
                     className={`nav-link fw-bold ${
                       scrolled ? "text-light" : "text-dark"
                     }`}
-                    onClick={handleCloseMenu}
+                    onClick={closeMenu}
                   >
                     {item.name}
                   </a>
