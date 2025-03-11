@@ -87,23 +87,22 @@ const Portfolio = () => {
             </p>
           </div>
           <div className="container-fluid">
-            <div className="row">
-              {list.map((category, index) => (
-                <div className="col-6" key={index}>
-                  <div className="p-3 text-center">
-                    <button
-                      type="button"
-                      className={`btn btn-danger text-capitalize ${
-                        category.name === selectedCategory ? "active" : ""
-                      }`}
-                      onClick={() => setSelectedCategory(category.name)}
-                    >
-                      {category.name}
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
+            {list.map((category, index) => (
+              <div
+                className="d-flex flex-column align-items-center p-3 text-center"
+                key={index}
+              >
+                <button
+                  type="button"
+                  className={`btn btn-danger text-capitalize ${
+                    category.name === selectedCategory ? "active" : ""
+                  }`}
+                  onClick={() => setSelectedCategory(category.name)}
+                >
+                  {category.name}
+                </button>
+              </div>
+            ))}
           </div>
 
           <div className="container-fluid image_cont">

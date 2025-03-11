@@ -49,7 +49,9 @@ const NavBar = () => {
         </button>
 
         <div
-          className={`navbar-collapse collapse text-center justify-content-center   ${!close}`}
+          className={`navbar-collapse collapse text-center justify-content-center   ${
+            !close ? "show" : ""
+          }`}
           id="navbar"
         >
           <div className="d-flex align-items-center justify-content-center">

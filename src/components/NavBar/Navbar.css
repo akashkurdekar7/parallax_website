@@ -16,3 +16,12 @@
   backdrop-filter: blur(10px);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+.show {
+  min-height: 100vh;
+}
+@media (min-width: 1200px) {
+  .show {
+    min-height: 100%;
+  }
+}
