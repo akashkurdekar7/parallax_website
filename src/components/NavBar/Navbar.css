@@ -24,5 +24,6 @@
 @media (min-width: 1200px) {
   .show {
     min-height: 100%;
+    padding: 0;
   }
 }
