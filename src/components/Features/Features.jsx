@@ -64,7 +64,7 @@ const Features = () => {
                     Aliquid ut qui optio dignissimos vel ad. Unde porro sapiente
                     cum explicabo dicta rerum, non aut quam!
                   </p>
-                  <button className="btn btn-danger fw-bold">
+                  <button className="btn btn-danger fw-bold" href="#contact">
                     Get Started
                   </button>
                 </div>
