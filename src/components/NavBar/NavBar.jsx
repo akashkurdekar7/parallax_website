@@ -1,72 +1,88 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./Navbar.css";
 
 const NavBar = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolling] = useState(false);
+  const [close, setClose] = useState(true);
+
+  const handleScroll = useCallback(() => {
+    requestAnimationFrame(() => {
+      if (window.scrollY > 50) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    });
+  }, []);
+
+  const handleCloseMenu = () => {
+    setClose(!close);
+  };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
 
   return (
     <nav
-      className={`navbar navbar-expand-lg fixed-top w-100 p-3 ${
-        scrolled ? "navbar-bg-scrolled" : "navbar-bg"
+      className={`navbar navbar-expand-lg text-center w-100 p-3 fixed-top ${
+        scrolled ? "navbar-bg-scrolled " : "navbar-bg"
       }`}
     >
       <div className="container-fluid">
-        <a href="#" className="navbar-brand ms-xl-5 font-sign">
-          Logo
-        </a>
-
+        <div className="logo">
+          <a href="#" className="navbar-brand fs-2 font-sign">
+            Logo
+          </a>
+        </div>
         <button
           className="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar"
           type="button"
-          aria-expanded={menuOpen}
-          aria-controls="navbarNav"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={handleCloseMenu}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div
-          className={`collapse navbar-collapse vh-100 d-flex justify-content-center align-items-center ${
-            menuOpen ? "show" : ""
-          }`}
-          id="navbarNav"
+          className={`navbar-collapse collapse text-center justify-content-center min-vh-sm-100  ${!close}`}
+          id="navbar"
         >
-          <ul className="navbar-nav justify-content-start align-items-center h-100 gap-2">
-            {[
-              "Home",
-              "About",
-              "Services",
-              "Features",
-              "Portfolio",
-              "Pricing",
-              "Team",
-              "Testimonials",
-              "Blog",
-              "Contact",
-            ].map((name) => (
-              <li className="nav-item" key={name}>
-                <a
-                  href={`#${name.toLowerCase()}`}
-                  className={`nav-link fw-bold ${
-                    scrolled ? "text-light" : "text-dark"
-                  }`}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {name}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className="div">
+            <ul className="navbar-nav gap-md-4 gap-5">
+              {[
+                { name: "Home", link: "#home" },
+                { name: "About", link: "#about" },
+                { name: "Services", link: "#services" },
+                { name: "Features", link: "#features" },
+                { name: "Portfolio", link: "#portfolio" },
+                { name: "Pricing", link: "#pricing" },
+                { name: "Team", link: "#team" },
+                { name: "Testimonials", link: "#testimonials" },
+                { name: "Blog", link: "#blog" },
+                { name: "Contact", link: "#contact" },
+              ].map((item) => (
+                <li className="nav-item text-white" key={item.name}>
+                  <a
+                    href={item.link}
+                    className={`nav-link fw-bold ${
+                      scrolled ? "text-light" : "text-dark"
+                    }`}
+                    onClick={handleCloseMenu}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="btn btn-danger text-capitalize flex-end">
+          get started
         </div>
       </div>
     </nav>

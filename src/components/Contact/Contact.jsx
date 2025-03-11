@@ -18,9 +18,9 @@ const Contact = () => {
           <div className="row ">
             <div className="col-12 col-lg-6 pb-4">
               <div className="row row-gap-4">
-                <div className="col-6">
+                <div className="col-12 col-md-6">
                   <div className="border border-2 p-3 h-100 rounded bg-light text-center">
-                    <div className="fs-1 text-danger">
+                    <div className="fs-1 text-danger ">
                       <BiLocationPlus />
                     </div>
                     <h4 className="mt-2">Address</h4>
@@ -28,7 +28,7 @@ const Contact = () => {
                     <p>New York, NY 535022</p>
                   </div>
                 </div>
-                <div className="col-6">
+                <div className="col-12  col-md-6">
                   <div className="border border-2 p-3 h-100 rounded bg-light text-center">
                     <div className="fs-1 text-success">
                       <FcCallback />
@@ -38,7 +38,7 @@ const Contact = () => {
                     <p>+1 6678 254445 41</p>
                   </div>
                 </div>
-                <div className="col-6">
+                <div className="col-12  col-md-6">
                   <div className="border border-2 p-3 h-100 rounded bg-light text-center">
                     <div className="fs-1 text-primary">
                       <PiEnvelopeSimpleOpen />
@@ -48,7 +48,7 @@ const Contact = () => {
                     <p>contact@example.com</p>
                   </div>
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-md-6">
                   <div className="border border-2 p-3 h-100 rounded bg-light text-center">
                     <div className="fs-1 text-warning">
                       <BsClock />

@@ -65,7 +65,7 @@ const Team = () => {
         <div className="row">
           {teamMembers.map((member) => (
             <div
-              className="col-12 col-sm-6 col-lg-4 p-5 "
+              className="col-12 col-sm-6 col-lg-4 p-md-5 p-3"
               key={member.id}
             >
               <div className="card h-100 text-center border-0 ">
