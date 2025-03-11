@@ -87,7 +87,7 @@ const Testimonials = () => {
                     key={idx}
                     className={`carousel-item ${idx === 0 ? "active" : ""}`}
                   >
-                    <div className="d-flex align-items-center p-3">
+                    <div className="d-flex align-items-center p-3 justify-content-center justify-content-md-start">
                       <img
                         loading="lazy"
                         src={item.img}
