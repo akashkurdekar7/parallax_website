@@ -51,19 +51,7 @@ const Testimonials = () => {
       className="section d-flex flex-column justify-content-evenly"
       id="testimonials"
     >
-      <div className="banner text-center text-bg-dark p-5">
-        <h1 className="font-sign">Call to Action</h1>
-        <p className="font-mono fs-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-          distinctio dolor tempora dicta reprehenderit voluptas fugit vitae
-          recusandae illum alias suscipit qui praesentium, dolorem autem atque
-          aliquam obcaecati temporibus, nesciunt harum earum soluta? Aperiam,
-          expedita? Quam, fuga cupiditate. Odit, neque!
-        </p>
-        <button className="btn btn-warning">Call to Action</button>
-      </div>
-
-      <div className="container mt-5">
+      <div className="container">
         <div className="row">
           <div className="col-12 col-lg-6 text-center text-md-start mb-4 d-flex flex-column justify-content-center">
             <h2 className="font-sign">Testimonials</h2>
