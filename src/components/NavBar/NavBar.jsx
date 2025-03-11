@@ -37,7 +37,7 @@ const NavBar = () => {
   return (
     <nav
       className={`navbar navbar-expand-lg text-center w-100 p-3 fixed-top ${
-        scrolled ? "navbar-bg-scrolled " : "navbar-bg"
+        scrolled ? "navbar-bg-scrolled" : "navbar-bg"
       }`}
     >
       <div className="container-fluid">
