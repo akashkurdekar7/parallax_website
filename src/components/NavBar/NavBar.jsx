@@ -55,7 +55,7 @@ const NavBar = () => {
           id="navbar"
         >
           <div className="d-flex align-items-center justify-content-center">
-            <ul className="navbar-nav gap-md-4 gap-3 align-items-center m-md-0 mt-4">
+            <ul className="navbar-nav gap-md-4 gap-3 align-items-center m-md-0 mt-4 border border-2">
               {[
                 { name: "Home", link: "#home" },
                 { name: "About", link: "#about" },
