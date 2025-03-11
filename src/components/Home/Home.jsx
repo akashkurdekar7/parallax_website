@@ -15,7 +15,7 @@ const Home = () => {
         <div className="container z-2 ">
           <div className="d-flex flex-column align-items-md-start ps-md-5 ms-md-5 align-items-center justify-content-center max-w-max">
             <h1 className="text-light">Welcome to our website</h1>
-            <p className="info text-light">
+            <p className="info text-light text-md-left text-center">
               We are a team of talented designers making websites.
             </p>
             <form className="d-flex gap-2 justify-content-center align-items-center bg-light p-2 rounded">
