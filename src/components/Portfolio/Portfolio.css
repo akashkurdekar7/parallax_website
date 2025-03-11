@@ -21,7 +21,6 @@
   transition: transform 0.3s linear;
 }
 
-.image
-:hover {
+.image :hover {
   transform: scale(1.1);
 }

@@ -86,22 +86,18 @@ const Portfolio = () => {
               debitis.
             </p>
           </div>
-          <div className="container-fluid">
+          <div className="container-fluid text-center">
             {list.map((category, index) => (
-              <div
-                className="d-flex flex-column align-items-center p-3 text-center"
+              <button
                 key={index}
+                type="button"
+                className={` btn btn-danger m-2 text-capitalize ${
+                  category.name === selectedCategory ? "active" : ""
+                }`}
+                onClick={() => setSelectedCategory(category.name)}
               >
-                <button
-                  type="button"
-                  className={`btn btn-danger text-capitalize ${
-                    category.name === selectedCategory ? "active" : ""
-                  }`}
-                  onClick={() => setSelectedCategory(category.name)}
-                >
-                  {category.name}
-                </button>
-              </div>
+                {category.name}
+              </button>
             ))}
           </div>
 
