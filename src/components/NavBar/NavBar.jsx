@@ -49,7 +49,7 @@ const NavBar = () => {
         </button>
 
         <div
-          className={`navbar-collapse collapse text-center justify-content-center  p-5 p-md-0 ${
+          className={`navbar-collapse collapse text-center justify-content-center ${
             !close ? "show" : ""
           }`}
           id="navbar"

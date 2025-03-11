@@ -19,6 +19,7 @@
 
 .show {
   min-height: 100vh;
+  padding: 30px;
 }
 @media (min-width: 1200px) {
   .show {
