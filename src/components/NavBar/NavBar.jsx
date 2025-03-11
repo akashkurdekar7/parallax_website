@@ -89,11 +89,13 @@ const NavBar = () => {
                   </a>
                 </li>
               ))}
-              <button className="btn btn-danger text-capitalize">
-                <a href="#contact" onClick={closeMenu}>
-                  get started
-                </a>
-              </button>
+              <div>
+                <button className="btn btn-danger text-capitalize">
+                  <a href="#contact" onClick={closeMenu}>
+                    get started
+                  </a>
+                </button>
+              </div>
             </ul>
           </div>
         </div>
