@@ -49,13 +49,13 @@ const NavBar = () => {
         </button>
 
         <div
-          className={`navbar-collapse collapse text-center justify-content-center   ${
+          className={`navbar-collapse collapse text-center justify-content-center  p-5 p-md-0 ${
             !close ? "show" : ""
           }`}
           id="navbar"
         >
           <div className="d-flex align-items-center justify-content-center">
-            <ul className="navbar-nav gap-md-4 gap-3 align-items-center m-md-0 mt-4 border border-2">
+            <ul className="navbar-nav gap-md-4 gap-3 align-items-center ">
               {[
                 { name: "Home", link: "#home" },
                 { name: "About", link: "#about" },
