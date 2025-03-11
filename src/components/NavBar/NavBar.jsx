@@ -55,7 +55,7 @@ const NavBar = () => {
           id="navbar"
         >
           <div className="d-flex align-items-center justify-content-center">
-            <ul className="navbar-nav gap-md-4 gap-3 align-items-center">
+            <ul className="navbar-nav gap-md-4 gap-3 align-items-center m-md-0 mt-4">
               {[
                 { name: "Home", link: "#home" },
                 { name: "About", link: "#about" },
@@ -68,7 +68,7 @@ const NavBar = () => {
                 { name: "Blog", link: "#blog" },
                 { name: "Contact", link: "#contact" },
               ].map((item) => (
-                <li className="nav-item text-white" key={item.name}>
+                <li className="nav-item text-white " key={item.name}>
                   <a
                     href={item.link}
                     className={`nav-link fw-bold ${
