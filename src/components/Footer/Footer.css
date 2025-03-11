@@ -7,3 +7,9 @@
   color: #b91646;
   transform: scale(1.2);
 }
+
+.footer {
+  height: max-content !important;
+  padding: 0;
+  min-height: 100%;
+}

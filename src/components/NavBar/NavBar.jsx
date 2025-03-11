@@ -1,81 +1,68 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 
 const NavBar = () => {
-  const [scrolled, setScrolling] = useState(false);
-  const [close, setClose] = useState(true);
-
-  const handleScroll = useCallback(() => {
-    requestAnimationFrame(() => {
-      if (window.scrollY > 50) {
-        setScrolling(true);
-      } else {
-        setScrolling(false);
-      }
-    });
-  }, []);
-
-  const handleCloseMenu = () => {
-    setClose(!close);
-  };
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
     };
-  }, [handleScroll]);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav
-      className={`navbar navbar-expand-lg text-center w-100 p-3 fixed-top ${
-        scrolled ? "navbar-bg-scrolled " : "navbar-bg"
+      className={`navbar navbar-expand-lg fixed-top w-100 p-3 ${
+        scrolled ? "navbar-bg-scrolled" : "navbar-bg"
       }`}
     >
       <div className="container-fluid">
-        <div className="logo">
-          <a href="#" className="navbar-brand fs-2 font-sign">
-            Logo
-          </a>
-        </div>
+        <a href="#" className="navbar-brand ms-xl-5 font-sign">
+          Logo
+        </a>
+
         <button
           className="navbar-toggler"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbar"
           type="button"
-          onClick={handleCloseMenu}
+          aria-expanded={menuOpen}
+          aria-controls="navbarNav"
+          onClick={() => setMenuOpen(!menuOpen)}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div
-          className={`navbar-collapse collapse text-center justify-content-center ${
-            !close && "show"
+          className={`collapse navbar-collapse vh-100 d-flex justify-content-center align-items-center ${
+            menuOpen ? "show" : ""
           }`}
-          id="navbar"
+          id="navbarNav"
         >
-          <ul className="navbar-nav gap-md-4 gap-5">
+          <ul className="navbar-nav justify-content-start align-items-center h-100 gap-2">
             {[
-              { name: "Home", link: "#home" },
-              { name: "About", link: "#about" },
-              { name: "Services", link: "#services" },
-              { name: "Features", link: "#features" },
-              { name: "Portfolio", link: "#portfolio" },
-              { name: "Pricing", link: "#pricing" },
-              { name: "Team", link: "#team" },
-              { name: "Testimonials", link: "#testimonials" },
-              { name: "Blog", link: "#blog" },
-              { name: "Contact", link: "#contact" },
-            ].map((item) => (
-              <li className="nav-item text-white" key={item.name}>
+              "Home",
+              "About",
+              "Services",
+              "Features",
+              "Portfolio",
+              "Pricing",
+              "Team",
+              "Testimonials",
+              "Blog",
+              "Contact",
+            ].map((name) => (
+              <li className="nav-item" key={name}>
                 <a
-                  href={item.link}
+                  href={`#${name.toLowerCase()}`}
                   className={`nav-link fw-bold ${
                     scrolled ? "text-light" : "text-dark"
                   }`}
-                  onClick={handleCloseMenu}
+                  onClick={() => setMenuOpen(false)}
                 >
-                  {item.name}
+                  {name}
                 </a>
               </li>
             ))}
