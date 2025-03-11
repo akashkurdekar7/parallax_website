@@ -89,8 +89,10 @@ const NavBar = () => {
                   </a>
                 </li>
               ))}
-              <div className="btn btn-danger text-capitalize mx-auto my-3">
-                get started
+              <div>
+                <button className="btn btn-danger text-capitalize">
+                  <a href="#contact">get started</a>
+                </button>
               </div>
             </ul>
           </div>
