@@ -59,7 +59,7 @@ const NavBar = () => {
 
         <div
           className={`navbar-collapse collapse text-center justify-content-center ${
-            menuOpen ? "show" : ""
+            menuOpen ? "showMenu" : ""
           }`}
           id="navbar"
         >

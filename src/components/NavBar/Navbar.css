@@ -17,13 +17,13 @@
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.show {
+.showMenu {
   min-height: 100vh;
   padding: 30px;
   transition: all 0.4s ease-in-out;
 }
 @media (min-width: 1200px) {
-  .show {
+  .showMenu {
     min-height: max-content;
     padding: 0;
     background: none;
